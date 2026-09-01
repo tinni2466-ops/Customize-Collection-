@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0f1115;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Views management */
+        .view {
+            display: none;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 460px;
+            padding: 36px;
+            position: relative;
+        }
+        .view.active {
+            display: block;
+        }
+
+        /* --- VIEW 1: Initial Login Modal --- */
+        #view-login {
+            max-width: 500px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #5f6368;
+        }
+        .modal-title {
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .modal-subtitle {
+            font-size: 14px;
+            color: #5f6368;
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px 14px 14px 44px;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26,115,232,0.2);
+        }
+        .input-group svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            fill: #5f6368;
+            width: 18px;
+            height: 18px;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background-color: #3b50fb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 16px;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #2f41d9;
+        }
+        .terms-text {
+            font-size: 12px;
+            color: #5f6368;
+            text-align: center;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        .terms-text a {
+            color: #3b50fb;
+            text-decoration: none;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #8c939e;
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #dadce0;
+        }
+        .divider::before { margin-right: .75em; }
+        .divider::after { margin-left: .75em; }
+
+        .btn-social {
+            width: 100%;
+            padding: 12px;
+            background: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #3c4043;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            transition: background-color 0.2s;
+        }
+        .btn-social:hover {
+            background-color: #f8f9fa;
+        }
+        .btn-social img {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* --- VIEW 2 & 3: Google Simulation Screens --- */
+        .google-card {
+            background: #ffffff;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .google-header-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: #3c4043;
+        }
+        .google-logo {
+            width: 20px;
+            height: 20px;
+        }
+        .brand-logo-box {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .google-title {
+            font-size: 24px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 8px;
+        }
+        .google-subtitle {
+            font-size: 14px;
+            color: #5f6368;
+            margin-bottom: 32px;
+        }
+        .google-subtitle span {
+            color: #1a73e8;
+            font-weight: 500;
+        }
+
+        /* Account selection list */
+        .account-list {
+            border-top: 1px solid #dadce0;
+        }
+        .account-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #dadce0;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .account-item:hover {
+            background-color: #f8f9fa;
+            padding-left: 8px;
+            padding-right: 8px;
+            margin-left: -8px;
+            margin-right: -8px;
+            border-radius: 4px;
+        }
+        .account-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1a73e8;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            margin-right: 16px;
+            font-size: 16px;
+        }
+        .account-details .name {
+            font-size: 14px;
+            font-weight: 500;
+            color: #202124;
+        }
+        .account-details .email {
+            font-size: 12px;
+            color: #5f6368;
+        }
+        .use-another-account {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #dadce0;
+            cursor: pointer;
+            font-size: 14px;
+            color: #202124;
+            gap: 16px;
+        }
+        .use-another-account svg {
+            width: 24px;
+            height: 24px;
+            fill: #5f6368;
+            margin-left: 8px;
+        }
+        .google-footer-notes {
+            font-size: 12px;
+            color: #5f6368;
+            line-height: 1.5;
+            margin-top: 24px;
+        }
+        .google-footer-notes a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        /* View 3 Specifics */
+        .dropdown-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #dadce0;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 24px;
+            cursor: pointer;
+        }
+        .dropdown-box .dot {
+            width: 24px;
+            height: 24px;
+            background: #000;
+            border-radius: 50%;
+        }
+        .permissions-box {
+            font-size: 14px;
+            color: #202124;
+            margin-bottom: 24px;
+        }
+        .permission-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+        .permission-row svg {
+            width: 20px;
+            height: 20px;
+            fill: #5f6368;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .permission-row .p-title {
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .permission-row .p-desc {
+            font-size: 12px;
+            color: #5f6368;
+        }
+        .google-action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-top: 32px;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #dadce0;
+            color: #1a73e8;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn-outline:hover { background: rgba(26,115,232,0.04); }
+        .btn-solid {
+            background: #1a73e8;
+            border: none;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn-solid:hover { background: #1557b0; }
+    </style>
+</head>
+<body>
+
+    <!-- SCREEN 1: Initial Login Modal -->
+    <div id="view-login" class="view active">
+        <button class="close-btn"><a href="Shop.html" style="text-decoration: none;">&times;</a></button>
+        <div class="modal-title">Log in to your account</div>
+        <div class="modal-subtitle">Enter your email address to log in to your account</div>
+        
+        <div class="input-group">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <input type="email" placeholder="Email address">
+        </div>
+        
+        <button class="btn-primary">Continue</button>
+        
+        <div class="terms-text">
+            By proceeding you accept our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a> and agree to receive future updates from Design.com
+        </div>
+        
+        <div class="divider">or</div>
+        
+        <button class="btn-social" id="trigger-google">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+            Continue with Google
+        </button>
+        <button class="btn-social">
+            <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook">
+            Continue with Facebook
+        </button>
+    </div>
+
+
+    <!-- SCREEN 2: Choose Google Account -->
+    <div id="view-chooser" class="google-card view">
+        <div class="google-header-row">
+            <img class="google-logo" src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+            <span>Sign in with Google</span>
+        </div>
+        
+        <div class="brand-logo-box">
+            <svg width="32" height="32" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>D</span>
+        </div>
+        
+        <div class="google-title">Choose an account</div>
+        <div class="google-subtitle">to continue to <span>design.com</span></div>
+        
+        <div class="account-list">
+            <div class="account-item" onclick="selectAccount('Tinni Mondal', 'tinni2466@gmail.com')">
+                <div class="account-avatar" style="background:#ea4335;">T</div>
+                <div class="account-details">
+                    <div class="name">Tinni Mondal</div>
+                    <div class="email">tinni2466@gmail.com</div>
+                </div>
+            </div>
+            <div class="account-item" onclick="selectAccount('Surjendu Mondal', 'mondalsurjendu78@gmail.com')">
+                <div class="account-avatar" style="background:#1a73e8;">S</div>
+                <div class="account-details">
+                    <div class="name">Surjendu Mondal</div>
+                    <div class="email">mondalsurjendu78@gmail.com</div>
+                </div>
+            </div>
+            <div class="use-another-account">
+                <svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                Use another account
+            </div>
+        </div>
+
+        <div class="google-footer-notes">
+            Before using this app, you can review design.com’s <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.
+        </div>
+    </div>
+
+
+    <!-- SCREEN 3: Google Permission Grant Screen -->
+    <div id="view-permissions" class="google-card view">
+        <div class="google-header-row">
+            <img class="google-logo" src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google">
+            <span>Sign in with Google</span>
+        </div>
+        
+        <div class="brand-logo-box">
+            <svg width="32" height="32" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>D</span>
+        </div>
+        
+        <div class="google-title">Sign in to design.com</div>
+        
+        <div class="dropdown-box" id="back-to-chooser">
+            <div class="dot"></div>
+            <span id="selected-email-display">tinni2466@gmail.com</span>
+            <svg width="12" height="12" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </div>
+        
+        <div class="permissions-box">
+            <div style="font-weight: 500; margin-bottom: 16px;">Google will allow design.com to access this info about you</div>
+            
+            <div class="permission-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+                <div>
+                    <div class="p-title" id="permission-name">Tinni Mondal</div>
+                    <div class="p-desc">Name and profile picture</div>
+                </div>
+            </div>
+            
+            <div class="permission-row">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <div>
+                    <div class="p-title" id="permission-email">tinni2466@gmail.com</div>
+                    <div class="p-desc">Email address</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="google-footer-notes" style="margin-bottom: 20px;">
+            Review design.com's <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> to understand how design.com will process and protect your data.<br>
+            To make changes at any time, go to your <a href="#">Google Account</a>.<br>
+            Learn more about <a href="#">Sign in with Google</a>.
+        </div>
+
+        <div class="google-action-buttons">
+            <button class="btn-outline" id="btn-cancel">Cancel</button>
+            <button class="btn-solid" id="btn-continue">Continue</button>
+        </div>
+    </div>
+
+
+    <!-- JavaScript to control flow and interactivity -->
+<!-- JavaScript to control flow, interactivity, and localStorage session -->
+    <script>
+        const viewLogin = document.getElementById('view-login');
+        const viewChooser = document.getElementById('view-chooser');
+        const viewPermissions = document.getElementById('view-permissions');
+
+        let activeUser = null;
+
+        function switchView(targetView) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            targetView.classList.add('active');
+        }
+
+        // Check if user is already logged in on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            let savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                activeUser = JSON.parse(savedUser);
+                // If already logged in, you can change UI text or automatically redirect to shop
+                console.log("Logged in as:", activeUser.email);
+            }
+        });
+
+        // Click "Continue with Google" -> Open account selector
+        document.getElementById('trigger-google').addEventListener('click', () => {
+            switchView(viewChooser);
+        });
+
+        // Click an account item -> Open permission grant window
+        window.selectAccount = function(name, email) {
+            activeUser = { name: name, email: email, provider: 'Google' };
+            document.getElementById('selected-email-display').innerText = email;
+            document.getElementById('permission-name').innerText = name;
+            document.getElementById('permission-email').innerText = email;
+            switchView(viewPermissions);
+        }
+
+        // Click dropdown box on permission screen -> Go back to account selector
+        document.getElementById('back-to-chooser').addEventListener('click', () => {
+            switchView(viewChooser);
+        });
+
+        // Click Cancel -> Return to initial screen
+        document.getElementById('btn-cancel').addEventListener('click', () => {
+            switchView(viewLogin);
+        });
+
+        // Click Continue -> Save session to localStorage and redirect to Shop.html
+        document.getElementById('btn-continue').addEventListener('click', () => {
+            if (activeUser) {
+                localStorage.setItem('currentUser', JSON.stringify(activeUser));
+                alert('Successfully logged in as ' + activeUser.email + '!');
+                window.location.href = 'Shop.html'; // Redirects back to your shop page
+            }
+        });
+    </script>
+</body>
+</html>

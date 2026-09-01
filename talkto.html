@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Talk - Customer Voice Chat</title>
+<style>
+* { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+body { background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; }
+
+/* Login Container Overlay */
+.login-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #f0f2f5;
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+}
+.login-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+}
+.login-card h2 { margin-bottom: 8px; color: #111b21; font-size: 1.3rem; }
+.login-card p { font-size: 0.85rem; color: #666; margin-bottom: 20px; }
+.login-field { margin-bottom: 15px; text-align: left; }
+.login-field label { display: block; font-size: 0.8rem; color: #333; margin-bottom: 5px; font-weight: 600; }
+.login-field input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+}
+.login-field input:focus { border-color: #007bff; }
+.login-btn {
+    width: 100%;
+    padding: 11px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.login-btn:hover { background: #0056b3; }
+.error-msg { color: #d93025; font-size: 0.8rem; margin-top: 10px; display: none; }
+
+/* Chat Container */
+.talk1 { width: 450px; height: 600px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; }
+.tal1 { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #f8f9fa; }
+
+.tal2 { padding: 15px; border-top: 1px solid #eee; background: #fff; display: flex; flex-direction: column; gap: 10px; }
+.controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.ta1 { flex: 1; }
+.ta1 input { width: 100%; padding: 10px 14px; border: 1px solid #ccc; border-radius: 8px; outline: none; font-size: 0.9rem; }
+.action-btns { display: flex; align-items: center; gap: 6px; }
+
+button { background: #3b50fb; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+button:disabled { background: #e4e6eb !important; cursor: not-allowed; opacity: 0.7; }
+button:disabled svg { fill: #999999 !important; }
+button svg { fill: #ffffff; }
+
+.mic { font-size: 0.8rem; color: #666; text-align: center; }
+
+/* Message Bubbles */
+.message {
+    max-width: 85%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+}
+.message.sent { background: #d9fdd3; align-self: flex-end; border-top-right-radius: 0; }
+.message.received { background: #ffffff; align-self: flex-start; border-top-left-radius: 0; }
+.message-text { word-wrap: break-word; color: #111b21; margin-bottom: 2px; }
+.time-stamp { font-size: 0.7rem; color: #667781; align-self: flex-end; }
+
+/* Voice Player */
+.voice-note-card { display: flex; flex-direction: column; gap: 8px; width: 280px; padding: 8px 6px; }
+.vn-top-row { display: flex; align-items: center; gap: 10px; }
+.vn-play-btn { background: #00a884; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+.vn-play-btn.loading { background: #888888; cursor: wait; }
+.vn-play-btn svg { width: 18px; height: 18px; fill: #ffffff; }
+.vn-waveform { flex: 1; display: flex; align-items: center; justify-content: center; }
+.vn-waveform svg { width: 100%; height: 26px; fill: #00a884; opacity: 0.75; }
+.vn-duration { font-size: 0.72rem; background: rgba(0, 0, 0, 0.06); padding: 3px 8px; border-radius: 12px; color: #54656f; font-weight: 600; white-space: nowrap; }
+.vn-controls-row { display: flex; align-items: center; gap: 10px; width: 100%; }
+.vn-slider-container { flex: 1; display: flex; align-items: center; }
+
+input[type="range"] { -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; background: #ccc; outline: none; cursor: pointer; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; border-radius: 50%; background: #00a884; cursor: pointer; }
+.vn-progress-slider { width: 100%; }
+.vn-volume-container { display: flex; align-items: center; gap: 4px; }
+.vn-volume-btn { background: transparent; border: none; padding: 2px; width: auto; height: auto; cursor: pointer; }
+.vn-volume-btn svg { width: 16px; height: 16px; fill: #54656f; }
+.vn-volume-slider { width: 45px; }
+</style>
+</head>
+<body>
+
+<!-- LOGIN MODAL -->
+<div class="login-overlay" id="loginOverlay">
+    <div class="login-card">
+        <h2>Talk to Owner Portal</h2>
+        <p>Enter your Passcode to access your conversation</p>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="login-field">
+                <label for="loginOrderId">Order ID</label>
+                <input type="text" id="loginOrderId" placeholder="Order ID" required readonly style="background:#e9ecef;">
+            </div>
+            <div class="login-field">
+                <label for="loginPasscode">Passcode</label>
+                <input type="text" id="loginPasscode" placeholder="Enter 6-character passcode" required style="text-transform:uppercase;">
+            </div>
+            <button type="submit" class="login-btn">Access Portal</button>
+            <div class="error-msg" id="loginError">Invalid passcode. Please check and try again.</div>
+        </form>
+    </div>
+</div>
+
+<!-- CHAT UI -->
+<div class="talk1">
+    <div class="tal1" id="chatArea"></div>
+    <div class="tal2">
+        <div class="controls">
+            <div class="ta1">
+                <input type="text" id="talkto" placeholder="Type a response or record audio...">
+            </div>
+            <div class="action-btns">
+                <button id="sendTextBtn" title="Send Text Message">
+                    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+                <button id="micBtn" title="Start Recording">
+                    <svg width="22" height="22" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C9.769 2 8 3.757 8 5.828v6.344C8 14.242 9.769 16 12 16s4-1.758 4-3.828V5.828C16 3.758 14.231 2 12 2Z"/><path d="M13 20.945V23a1 1 0 1 1-2 0v-2.055C6.5 20.448 3 16.633 3 12a1 1 0 1 1 2 0 7 7 0 1 0 14 0 1 1 0 1 1 2 0c0 4.633-3.5 8.448-8 8.945Z"/></svg>
+                </button>
+                <button id="pauseBtn" disabled title="Pause / Resume Recording">
+                    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M19,4V20a2,2,0,0,1-2,2H15a2,2,0,0,1-2-2V4a2,2,0,0,1,2-2h2A2,2,0,0,1,19,4ZM9,2H7A2,2,0,0,0,5,4V20a2,2,0,0,0,2,2H9a2,2,0,0,0,2-2V4A2,2,0,0,0,9,2Z"/></svg>
+                </button>
+                <button id="stopBtn" disabled title="Stop and Send Voice Note">
+                    <svg width="20" height="20" viewBox="0 0 495.003 495.003">
+                        <path d="M164.711,456.687c0,2.966,1.647,5.686,4.266,7.072c2.617,1.385,5.799,1.207,8.245-0.468l55.09-37.616l-67.6-32.22V456.687z"/>
+                        <path d="M492.431,32.443c-1.513-1.395-3.466-2.125-5.44-2.125c-1.19,0-2.377,0.264-3.5,0.816L7.905,264.422c-4.861,2.389-7.937,7.353-7.904,12.783c0.033,5.423,3.161,10.353,8.057,12.689l125.342,59.724l250.62-205.99L164.455,364.414l156.145,74.4c1.918,0.919,4.012,1.376,6.084,1.376c1.768,0,3.519-0.322,5.186-0.977c3.637-1.438,6.527-4.318,7.97-7.956L494.436,41.257C494.436,38.188,494.862,34.679,492.431,32.443z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="mic">
+            <span id="status">Status: Idle</span>
+        </div>
+    </div>
+</div>
+
+<script>
+// --- Audio Storage Engine ---
+const AudioStore = {
+    dbName: 'VoiceChatDB',
+    dbVersion: 1,
+    storeName: 'audioTracks',
+    db: null,
+    async init() {
+        if (this.db) return this.db;
+        return new Promise((resolve, reject) => {
+            const request = indexedDB.open(this.dbName, this.dbVersion);
+            request.onupgradeneeded = (e) => {
+                const db = e.target.result;
+                if (!db.objectStoreNames.contains(this.storeName)) {
+                    db.createObjectStore(this.storeName);
+                }
+            };
+            request.onsuccess = (e) => {
+                this.db = e.target.result;
+                resolve(this.db);
+            };
+            request.onerror = (e) => reject(e);
+        });
+    },
+    async set(id, data) {
+        await this.init();
+        return new Promise((resolve, reject) => {
+            const tx = this.db.transaction(this.storeName, 'readwrite');
+            tx.objectStore(this.storeName).put(data, id);
+            tx.oncomplete = () => resolve();
+            tx.onerror = (e) => reject(e);
+        });
+    },
+    async get(id) {
+        await this.init();
+        return new Promise((resolve, reject) => {
+            const tx = this.db.transaction(this.storeName, 'readonly');
+            const req = tx.objectStore(this.storeName).get(id);
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = (e) => reject(e);
+        });
+    }
+};
+
+// --- URL & Local Storage Order Resolver ---
+const urlParams = new URLSearchParams(window.location.search);
+let currentOrderId = urlParams.get('orderId');
+
+function fetchOrderRecord(orderId) {
+    if (!orderId) {
+        console.warn("[fetchOrderRecord] No orderId provided.");
+        return null;
+    }
+    
+    let targetOrder = null;
+
+    // 1. Check in admin_orders
+    let allOrders = JSON.parse(localStorage.getItem('admin_orders')) || {};
+    if (allOrders[orderId]) {
+        targetOrder = allOrders[orderId];
+    }
+
+    // 2. Check active_order / order fallback
+    if (!targetOrder) {
+        let activeOrder = JSON.parse(localStorage.getItem('active_order')) || JSON.parse(localStorage.getItem('order')) || null;
+        if (activeOrder && activeOrder.id === orderId) {
+            targetOrder = activeOrder;
+        }
+    }
+
+    // 3. Fallback Password Rescue: Scan all local storage sources if talkPassword is missing
+    if (targetOrder && !targetOrder.talkPassword && !targetOrder.passkey) {
+        let activeOrder = JSON.parse(localStorage.getItem('active_order')) || JSON.parse(localStorage.getItem('order')) || {};
+        let foundPass = activeOrder.talkPassword || activeOrder.passkey;
+        if (foundPass && activeOrder.id === orderId) {
+            targetOrder.talkPassword = foundPass;
+            // Backport to admin_orders to ensure persistence
+            allOrders[orderId] = targetOrder;
+            localStorage.setItem('admin_orders', JSON.stringify(allOrders));
+            console.log("[fetchOrderRecord] Rescued missing talkPassword from active_order and updated admin_orders.");
+        }
+    }
+
+    console.log("Fetched Order:", targetOrder);
+    return targetOrder;
+}
+
+// Auto-fill order ID field on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const loginOrderIdInput = document.getElementById('loginOrderId');
+    if (currentOrderId) {
+        loginOrderIdInput.value = currentOrderId;
+    } else {
+        loginOrderIdInput.removeAttribute('readonly');
+        loginOrderIdInput.style.background = '#fff';
+    }
+
+    // Auto Login check (Session state recovery on reload)
+    const savedAuth = sessionStorage.getItem(`authenticated_order_${currentOrderId}`);
+    if (savedAuth === 'true') {
+        document.getElementById('loginOverlay').style.display = 'none';
+        renderChat();
+    }
+});
+
+// Login validation handler
+function handleLogin(e) {
+    e.preventDefault();
+    const orderId = document.getElementById('loginOrderId').value.trim();
+    const enteredPass = document.getElementById('loginPasscode').value.trim().toUpperCase();
+    const errorMsg = document.getElementById('loginError');
+
+    // Fetch order object from localStorage
+    const orderObj = fetchOrderRecord(orderId);
+    
+    // Check talkPassword first, then passkey
+    const passkey = orderObj ? (orderObj.talkPassword || orderObj.passkey || '') : '';
+
+    console.log("Login Password Entered:", enteredPass);
+    console.log(`The password here is: ${passkey}`);
+
+    if (passkey && enteredPass === passkey.toUpperCase()) {
+        currentOrderId = orderId;
+        sessionStorage.setItem(`authenticated_order_${currentOrderId}`, 'true');
+        document.getElementById('loginOverlay').style.display = 'none';
+        errorMsg.style.display = 'none';
+        renderChat();
+    } else {
+        errorMsg.style.display = 'block';
+    }
+}
+
+// --- Audio Recorder & Chat Logic ---
+let mediaRecorder;
+let audioChunks = [];
+let audioCtx = null;
+let audioStream = null;
+let activeAudioPlayer = null;
+
+const sendTextBtn = document.getElementById('sendTextBtn');
+const micBtn = document.getElementById('micBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const stopBtn = document.getElementById('stopBtn');
+const textInput = document.getElementById('talkto');
+const statusText = document.getElementById('status');
+const chatArea = document.getElementById('chatArea');
+
+const PLAY_SVG = `<svg viewBox="0 0 36 36" preserveAspectRatio="xMidYMid meet"><path d="M32.16,16.08,8.94,4.47A2.07,2.07,0,0,0,6,6.32V29.53a2.06,2.06,0,0,0,3,1.85L32.16,19.77a2.07,2.07,0,0,0,0-3.7Z"></path></svg>`;
+const PAUSE_SVG = `<svg viewBox="0 0 24 24"><path d="M19,4V20a2,2,0,0,1-2,2H15a2,2,0,0,1-2-2V4a2,2,0,0,1,2-2h2A2,2,0,0,1,19,4ZM9,2H7A2,2,0,0,0,5,4V20a2,2,0,0,0,2,2H9a2,2,0,0,0,2-2V4A2,2,0,0,0,9,2Z"/></svg>`;
+const VOL_HIGH_SVG = `<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>`;
+const VOL_MUTE_SVG = `<svg viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>`;
+
+function formatTime(seconds) {
+    if (!seconds || isNaN(seconds) || !isFinite(seconds)) return "0:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60).toString().padStart(2, '0');
+    return `${mins}:${secs}`;
+}
+
+function stopAllAudioPlayback() {
+    if (activeAudioPlayer) {
+        activeAudioPlayer.pause();
+        activeAudioPlayer.currentTime = 0;
+        if (activeAudioPlayer._uiBtn) {
+            activeAudioPlayer._uiBtn.innerHTML = PLAY_SVG;
+            activeAudioPlayer._uiBtn.classList.remove('loading');
+        }
+        activeAudioPlayer = null;
+    }
+}
+
+// Microphone Control
+micBtn.addEventListener('click', async () => {
+    audioChunks = [];
+    try {
+        audioStream = await navigator.mediaDevices.getUserMedia({ 
+            audio: { autoGainControl: true, echoCancellation: true, noiseSuppression: false } 
+        });
+
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const source = audioCtx.createMediaStreamSource(audioStream);
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.value = 2.0;
+
+        const destination = audioCtx.createMediaStreamDestination();
+        source.connect(gainNode);
+        gainNode.connect(destination);
+
+        const mimeType = MediaRecorder.isTypeSupported('audio/webm;codecs=opus') ? 'audio/webm;codecs=opus' : 'audio/webm';
+        mediaRecorder = new MediaRecorder(destination.stream, { mimeType });
+
+        mediaRecorder.ondataavailable = (event) => {
+            if (event.data && event.data.size > 0) audioChunks.push(event.data);
+        };
+
+        mediaRecorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: mimeType });
+            const reader = new FileReader();
+            reader.readAsDataURL(audioBlob);
+            reader.onloadend = () => saveAndSendVoiceNote(reader.result);
+
+            if (audioStream) audioStream.getTracks().forEach(track => track.stop());
+            if (audioCtx) audioCtx.close();
+
+            micBtn.disabled = false;
+            pauseBtn.disabled = true;
+            stopBtn.disabled = true;
+            statusText.innerText = "Status: Idle";
+        };
+
+        mediaRecorder.start(100);
+        micBtn.disabled = true;
+        pauseBtn.disabled = false;
+        stopBtn.disabled = false;
+        statusText.innerText = "Status: Recording...";
+    } catch (err) {
+        console.error("Microphone access error:", err);
+        statusText.innerText = "Status: Error accessing mic";
+    }
+});
+
+pauseBtn.addEventListener('click', () => {
+    if (!mediaRecorder) return;
+    if (mediaRecorder.state === "recording") {
+        mediaRecorder.pause();
+        statusText.innerText = "Status: Paused";
+    } else if (mediaRecorder.state === "paused") {
+        mediaRecorder.resume();
+        statusText.innerText = "Status: Recording...";
+    }
+});
+
+stopBtn.addEventListener('click', () => {
+    if (mediaRecorder && (mediaRecorder.state === "recording" || mediaRecorder.state === "paused")) {
+        mediaRecorder.stop();
+    }
+});
+
+// Message Persistence
+async function saveAndSendVoiceNote(base64Audio) {
+    const textNote = textInput.value.trim();
+    const audioId = 'audio_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+    try {
+        await AudioStore.set(audioId, base64Audio);
+        saveMessage({ sender: "customer", text: textNote || null, audioId: audioId });
+    } catch (err) {
+        console.error("Storage error:", err);
+        saveMessage({ sender: "customer", text: textNote || null, audio: base64Audio });
+    }
+    textInput.value = "";
+}
+
+sendTextBtn.addEventListener('click', () => {
+    const textNote = textInput.value.trim();
+    if (!textNote) return;
+    saveMessage({ sender: "customer", text: textNote, audioId: null });
+    textInput.value = "";
+});
+
+textInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') sendTextBtn.click();
+});
+
+function saveMessage(msgObj) {
+    let allOrders = JSON.parse(localStorage.getItem('admin_orders')) || {};
+    let existingRecord = fetchOrderRecord(currentOrderId);
+
+    let orderRecord = existingRecord || {
+        id: currentOrderId,
+        talkToOwnerRequested: true,
+        voiceChats: []
+    };
+
+    if (!orderRecord.voiceChats) orderRecord.voiceChats = [];
+
+    const msgData = {
+        ...msgObj,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+
+    orderRecord.voiceChats.push(msgData);
+
+    // Merge explicitly to prevent losing talkPassword or passkey during save
+    allOrders[currentOrderId] = {
+        ...allOrders[currentOrderId],
+        ...orderRecord,
+        talkPassword: orderRecord.talkPassword || (allOrders[currentOrderId] ? allOrders[currentOrderId].talkPassword : null)
+    };
+
+    localStorage.setItem('admin_orders', JSON.stringify(allOrders));
+    console.log("Saved Order:", allOrders[currentOrderId]);
+
+    statusText.innerText = "Status: Idle";
+    renderChat();
+}
+
+// Render Messages & Audio Elements
+async function appendMessageBubble(msg) {
+    if (!chatArea) return;
+
+    const time = msg.timestamp || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const bubble = document.createElement('div');
+    bubble.className = `message ${msg.sender === 'customer' ? 'sent' : 'received'}`;
+
+    let innerContent = "";
+    if (msg.text) {
+        innerContent += `<div class="message-text">${msg.text}</div>`;
+    }
+
+    if (msg.audioId || msg.audio) {
+        innerContent += `
+        <div class="voice-note-card">
+            <div class="vn-top-row">
+                <button class="vn-play-btn">${PLAY_SVG}</button>
+                <div class="vn-waveform">
+                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
+                        <rect x="2" y="10" width="3" height="10" rx="1.5"/><rect x="8" y="5" width="3" height="20" rx="1.5"/>
+                        <rect x="14" y="12" width="3" height="6" rx="1.5"/><rect x="20" y="3" width="3" height="24" rx="1.5"/>
+                        <rect x="26" y="8" width="3" height="14" rx="1.5"/><rect x="32" y="2" width="3" height="26" rx="1.5"/>
+                        <rect x="38" y="6" width="3" height="18" rx="1.5"/><rect x="44" y="1" width="3" height="28" rx="1.5"/>
+                        <rect x="50" y="4" width="3" height="22" rx="1.5"/><rect x="56" y="7" width="3" height="16" rx="1.5"/>
+                        <rect x="62" y="2" width="3" height="26" rx="1.5"/><rect x="68" y="10" width="3" height="10" rx="1.5"/>
+                        <rect x="74" y="5" width="3" height="20" rx="1.5"/><rect x="80" y="12" width="3" height="6" rx="1.5"/>
+                        <rect x="86" y="8" width="3" height="14" rx="1.5"/>
+                    </svg>
+                </div>
+                <span class="vn-duration">0:00 / 0:00</span>
+            </div>
+            <div class="vn-controls-row">
+                <div class="vn-slider-container">
+                    <input type="range" class="vn-progress-slider" value="0" min="0" max="100" step="0.1">
+                </div>
+                <div class="vn-volume-container">
+                    <button class="vn-volume-btn">${VOL_HIGH_SVG}</button>
+                    <input type="range" class="vn-volume-slider" value="1" min="0" max="1" step="0.05">
+                </div>
+            </div>
+        </div>`;
+    }
+
+    innerContent += `<span class="time-stamp">${time}</span>`;
+    bubble.innerHTML = innerContent;
+    chatArea.appendChild(bubble);
+
+    if (msg.audioId || msg.audio) {
+        const card = bubble.querySelector('.voice-note-card');
+        const playBtn = card.querySelector('.vn-play-btn');
+        const slider = card.querySelector('.vn-progress-slider');
+        const durationSpan = card.querySelector('.vn-duration');
+        const volBtn = card.querySelector('.vn-volume-btn');
+        const volSlider = card.querySelector('.vn-volume-slider');
+
+        let audioSrc = msg.audio;
+        if (msg.audioId) audioSrc = await AudioStore.get(msg.audioId);
+
+        if (!audioSrc) {
+            durationSpan.textContent = "Audio unavailable";
+            return;
+        }
+
+        const audio = new Audio(audioSrc);
+        audio._uiBtn = playBtn;
+
+        let isUserSeeking = false;
+
+        const updateDurationText = () => {
+            if (audio.duration && isFinite(audio.duration)) {
+                durationSpan.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            }
+        };
+
+        // Browser fix for WebM audio duration determination
+        audio.addEventListener('loadedmetadata', () => {
+            if (audio.duration === Infinity) {
+                audio.currentTime = 1e101;
+                audio.ontimeupdate = function() {
+                    this.ontimeupdate = null;
+                    audio.currentTime = 0;
+                    updateDurationText();
+                };
+            } else {
+                updateDurationText();
+            }
+        });
+
+        audio.addEventListener('durationchange', updateDurationText);
+
+        audio.addEventListener('timeupdate', () => {
+            if (!isUserSeeking && audio.duration && isFinite(audio.duration)) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                slider.value = pct;
+                slider.style.background = `linear-gradient(to right, #00a884 ${pct}%, #ccc ${pct}%)`;
+                durationSpan.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            playBtn.innerHTML = PLAY_SVG;
+            slider.value = 0;
+            slider.style.background = '#ccc';
+            audio.currentTime = 0;
+            updateDurationText();
+            if (activeAudioPlayer === audio) activeAudioPlayer = null;
+        });
+
+        // Seek Handling - prevents progress bar locking during dragging
+        const startSeek = () => { isUserSeeking = true; };
+        const endSeek = () => {
+            if (isUserSeeking && audio.duration && isFinite(audio.duration)) {
+                audio.currentTime = (slider.value / 100) * audio.duration;
+                isUserSeeking = false;
+            }
+        };
+
+        slider.addEventListener('pointerdown', startSeek);
+        slider.addEventListener('pointerup', endSeek);
+        slider.addEventListener('pointercancel', endSeek);
+
+        slider.addEventListener('input', () => {
+            slider.style.background = `linear-gradient(to right, #00a884 ${slider.value}%, #ccc ${slider.value}%)`;
+            if (audio.duration && isFinite(audio.duration)) {
+                const seekTime = (slider.value / 100) * audio.duration;
+                durationSpan.textContent = `${formatTime(seekTime)} / ${formatTime(audio.duration)}`;
+            }
+        });
+
+        playBtn.addEventListener('click', async () => {
+            if (!audio.paused) {
+                audio.pause();
+                playBtn.innerHTML = PLAY_SVG;
+                return;
+            }
+            stopAllAudioPlayback();
+            try {
+                audio.volume = parseFloat(volSlider.value);
+                await audio.play();
+                playBtn.innerHTML = PAUSE_SVG;
+                activeAudioPlayer = audio;
+            } catch (err) {
+                console.error("Playback error:", err);
+            }
+        });
+
+        volSlider.addEventListener('input', () => {
+            const val = parseFloat(volSlider.value);
+            audio.volume = val;
+            volBtn.innerHTML = (val === 0) ? VOL_MUTE_SVG : VOL_HIGH_SVG;
+        });
+
+        volBtn.addEventListener('click', () => {
+            if (parseFloat(volSlider.value) > 0) {
+                volBtn._lastVol = volSlider.value;
+                volSlider.value = 0;
+            } else {
+                volSlider.value = volBtn._lastVol || 1;
+            }
+            audio.volume = parseFloat(volSlider.value);
+            volBtn.innerHTML = (parseFloat(volSlider.value) === 0) ? VOL_MUTE_SVG : VOL_HIGH_SVG;
+        });
+    }
+
+    chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+async function renderChat() {
+    stopAllAudioPlayback();
+    chatArea.innerHTML = "";
+    const orderRecord = fetchOrderRecord(currentOrderId);
+
+    if (orderRecord && orderRecord.voiceChats) {
+        for (const msg of orderRecord.voiceChats) {
+            await appendMessageBubble(msg);
+        }
+    }
+}
+
+// Real-time synchronization
+window.addEventListener('storage', (e) => {
+    if (e.key === 'admin_orders' || e.key === 'active_order') renderChat();
+});
+
+/**
+ * TalkTo Page Extension & Audio/Panel Sync Module
+ * Preserves existing chat layout while providing side panel totals & real-time audio playback.
+ */
+
+(function initTalkToModule() {
+    // Inject Layout Styles without affecting existing CSS classes or .talk1 centering
+    const styleTag = document.createElement('style');
+    styleTag.textContent = `
+        .talkto-container-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 24px;
+            box-sizing: border-box;
+        }
+        .talkto-main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 0;
+        }
+        .talk1 {
+            margin: 0 auto !important;
+            width: 100%;
+            max-width: 600px;
+        }
+        .talkto-right-panel {
+            width: 320px;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        .talkto-qr-card {
+            background: #f8f9fa;
+            border: 1px solid #eaedf0;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+        .talkto-qr-card img {
+            width: 160px;
+            height: 160px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: #fff;
+            padding: 6px;
+        }
+        .talkto-totals-box {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 14px;
+        }
+        .talkto-summary-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+            color: #444;
+        }
+        .talkto-summary-row.grand-total {
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #2c3e50;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+            margin-bottom: 0;
+        }
+        @media (max-width: 850px) {
+            .talkto-container-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .talkto-right-panel {
+                width: 100%;
+                max-width: 600px;
+            }
+        }
+    `;
+    document.head.appendChild(styleTag);
+
+    function getCurrentActiveOrderId() {
+        return window.currentOrderId || localStorage.getItem('active_order_id') || null;
+    }
+
+    function getActiveOrder() {
+        const orderId = getCurrentActiveOrderId();
+        if (orderId) {
+            const found = DataStoreManager.getOrderById(orderId);
+            if (found) return found;
+        }
+        const all = DataStoreManager.getAllOrders();
+        const list = Array.isArray(all) ? all : Object.values(all);
+        return list.length > 0 ? list[0] : null;
+    }
+
+    /**
+     * PART 3 & PART 4: Inject Floating Price Panel & Dynamic QR Code Generator
+     */
+    function injectPanelDOM() {
+        if (document.getElementById('talktoRightPanel')) return;
+
+        const talk1Element = document.querySelector('.talk1');
+        if (!talk1Element) return;
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'talkto-container-wrapper';
+
+        const mainContent = document.createElement('div');
+        mainContent.className = 'talkto-main-content';
+
+        talk1Element.parentNode.insertBefore(wrapper, talk1Element);
+        mainContent.appendChild(talk1Element);
+
+        const rightPanel = document.createElement('div');
+        rightPanel.id = 'talktoRightPanel';
+        rightPanel.className = 'talkto-right-panel';
+        rightPanel.innerHTML = `
+            <h3 style="margin:0; font-size:1.1rem; color:#333; text-align:center;">Order Summary</h3>
+            
+            <div class="talkto-qr-card">
+                <img id="talkToQrCodeImg" src="${FALLBACK_IMAGE_PLACEHOLDER}" alt="QR Code">
+                <p style="margin:8px 0 0 0; font-size:0.75rem; color:#666;">Scan to View/Pay Order</p>
+            </div>
+
+            <div class="talkto-totals-box">
+                <div class="talkto-summary-row">
+                    <span>Items Subtotal:</span>
+                    <span id="talkToSubtotalDisplay">₹0</span>
+                </div>
+                <div class="talkto-summary-row">
+                    <span>Admin Extra Charges:</span>
+                    <span>₹<strong id="talkToExtraChargeDisplay">0</strong></span>
+                </div>
+                <div class="talkto-summary-row grand-total">
+                    <span>Grand Total:</span>
+                    <span id="talkToGrandTotalDisplay" style="color:#b70707;">₹0</span>
+                </div>
+            </div>
+        `;
+
+        wrapper.appendChild(mainContent);
+        wrapper.appendChild(rightPanel);
+    }
+
+    /**
+     * PART 4: Dynamic Encoded QR Code Generation
+     */
+    function updatePanelAndQR() {
+        const order = getActiveOrder();
+        if (!order) return;
+
+        // PART 2: Shared calculation function
+        const totals = calculateOrderTotals(order);
+
+        const subtotalEl = document.getElementById('talkToSubtotalDisplay');
+        const extraChargeEl = document.getElementById('talkToExtraChargeDisplay');
+        const grandTotalEl = document.getElementById('talkToGrandTotalDisplay');
+        const qrImg = document.getElementById('talkToQrCodeImg');
+
+        if (subtotalEl) subtotalEl.innerText = `₹${totals.subtotal}`;
+        if (extraChargeEl) extraChargeEl.innerText = `${totals.adminExtraCharge}`;
+        if (grandTotalEl) grandTotalEl.innerText = `₹${totals.grandTotal}`;
+
+        // Generate JSON payload encoded into the QR Code
+        if (qrImg) {
+            const customerName = (order.customer && order.customer.name) ? order.customer.name : 'Customer';
+            const qrPayload = {
+                id: String(order.id || 'ORDER123'),
+                name: customerName,
+                total: totals.grandTotal,
+                currency: 'INR',
+                time: new Date().toISOString()
+            };
+
+            const encodedData = encodeURIComponent(JSON.stringify(qrPayload));
+            qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodedData}`;
+            qrImg.onerror = () => {
+                qrImg.src = FALLBACK_IMAGE_PLACEHOLDER;
+            };
+        }
+    }
+
+    /**
+     * PART 7 & PART 9: Voice Chat Controls with Safe Delegation
+     */
+    function bindVoiceChatEvents() {
+        const chatContainer = document.querySelector('.talk1') || document.body;
+
+        // Delegated Audio Controls Handler to avoid duplicate listeners on re-render
+        chatContainer.onclick = (e) => {
+            const playBtn = e.target.closest('.voice-play-btn');
+            if (playBtn) {
+                const trackId = playBtn.getAttribute('data-track-id');
+                const audioUrl = playBtn.getAttribute('data-audio-url');
+                const parent = playBtn.closest('.voice-chat-item') || playBtn.parentElement;
+                
+                const slider = parent.querySelector('.voice-slider');
+                const timeDisplay = parent.querySelector('.voice-time');
+
+                const isPlaying = AudioManager.playTrack(trackId, audioUrl, slider, timeDisplay);
+                playBtn.innerText = isPlaying ? '⏸' : '▶';
+            }
+        };
+
+        chatContainer.oninput = (e) => {
+            if (e.target.classList.contains('voice-slider')) {
+                AudioManager.seek(Number(e.target.value) || 0);
+            } else if (e.target.classList.contains('voice-volume')) {
+                AudioManager.setVolume(Number(e.target.value) || 1);
+            }
+        };
+    }
+
+    // Initialization lifecycle
+    document.addEventListener('DOMContentLoaded', () => {
+        injectPanelDOM();
+        updatePanelAndQR();
+        bindVoiceChatEvents();
+
+        // Wrap existing chat rendering pipeline cleanly
+        if (typeof window.renderChat === 'function') {
+            const originalRenderChat = window.renderChat;
+            window.renderChat = async function (...args) {
+                const result = await originalRenderChat.apply(this, args);
+                updatePanelAndQR();
+                return result;
+            };
+        }
+    });
+
+    // PART 5: Real-time synchronization
+    const syncHandler = () => {
+        updatePanelAndQR();
+    };
+
+    window.addEventListener('storage', syncHandler);
+    window.addEventListener('app:order_updated', syncHandler);
+})();
+
+/**
+ * Shared Enterprise Core Engine
+ * Handles Data Persistence, Central Pricing, Audio Management, and Image Fallbacks.
+ */
+
+// Global Storage Keys
+const STORAGE_KEY_ADMIN_ORDERS = 'admin_orders';
+const FALLBACK_IMAGE_PLACEHOLDER = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f0f0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="12" fill="%23999999">No Image</text></svg>';
+
+/**
+ * PART 1 & 8: DataStoreManager - Safe Storage & Atomic Updates
+ */
+const DataStoreManager = {
+    getAllOrders() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY_ADMIN_ORDERS);
+            if (!raw) return {};
+            const parsed = JSON.parse(raw);
+            return typeof parsed === 'object' && parsed !== null ? parsed : {};
+        } catch (e) {
+            console.error('[DataStoreManager] Corrupted localStorage JSON detected:', e);
+            return {};
+        }
+    },
+
+    getOrderById(orderId) {
+        if (!orderId) return null;
+        const orders = this.getAllOrders();
+        if (Array.isArray(orders)) {
+            return orders.find(o => String(o.id) === String(orderId)) || null;
+        }
+        return orders[orderId] || null;
+    },
+
+    updateOrder(orderId, newChanges) {
+        if (!orderId || typeof newChanges !== 'object') return null;
+
+        try {
+            const allOrders = this.getAllOrders();
+            let existingOrder = null;
+            let isArrayFormat = Array.isArray(allOrders);
+
+            if (isArrayFormat) {
+                existingOrder = allOrders.find(o => String(o.id) === String(orderId)) || {};
+            } else {
+                existingOrder = allOrders[orderId] || {};
+            }
+
+            // Merge existing order fields with new changes cleanly
+            const updatedOrder = {
+                ...existingOrder,
+                ...newChanges,
+                id: orderId, // Ensure ID continuity
+                updatedAt: new Date().toISOString()
+            };
+
+            if (isArrayFormat) {
+                const idx = allOrders.findIndex(o => String(o.id) === String(orderId));
+                if (idx >= 0) {
+                    allOrders[idx] = updatedOrder;
+                } else {
+                    allOrders.push(updatedOrder);
+                }
+            } else {
+                allOrders[orderId] = updatedOrder;
+            }
+
+            // Save back to localStorage safely
+            localStorage.setItem(STORAGE_KEY_ADMIN_ORDERS, JSON.stringify(allOrders));
+
+            // PART 5: Real-Time Sync (Cross-Tab & Same-Tab dispatching)
+            this.broadcastChange(orderId, updatedOrder);
+
+            return updatedOrder;
+        } catch (e) {
+            if (e.name === 'QuotaExceededError') {
+                console.error('[DataStoreManager] LocalStorage Quota Exceeded! Optimizing storage...', e);
+            }
+            console.error('[DataStoreManager] Failed to update order:', e);
+            return null;
+        }
+    },
+
+    broadcastChange(orderId, updatedOrder) {
+        const payload = { orderId, order: updatedOrder, timestamp: Date.now() };
+
+        // Dispatch CustomEvent for same-tab real-time sync
+        window.dispatchEvent(new CustomEvent('app:order_updated', { detail: payload }));
+
+        // Dispatch synthetic storage event for cross-component triggers
+        window.dispatchEvent(new StorageEvent('storage', {
+            key: STORAGE_KEY_ADMIN_ORDERS,
+            newValue: JSON.stringify(this.getAllOrders())
+        }));
+    }
+};
+
+/**
+ * PART 2: Central Price Calculation Engine
+ */
+function calculateOrderTotals(order) {
+    if (!order) {
+        return { subtotal: 0, adminExtraCharge: 0, grandTotal: 0 };
+    }
+
+    let subtotal = 0;
+
+    if (Array.isArray(order.items) && order.items.length > 0) {
+        subtotal = order.items.reduce((sum, item) => {
+            const price = Number(item.price) || 0;
+            const qty = Number(item.qty || item.quantity) || 1;
+            return sum + (price * qty);
+        }, 0);
+    } else if (Array.isArray(order.products) && order.products.length > 0) {
+        subtotal = order.products.reduce((sum, item) => {
+            const price = Number(item.price) || 0;
+            const qty = Number(item.qty || item.quantity) || 1;
+            return sum + (price * qty);
+        }, 0);
+    } else if (order.subtotal !== undefined && order.subtotal !== null) {
+        subtotal = Number(order.subtotal) || 0;
+    }
+
+    const adminExtraCharge = Number(order.adminExtraCharge) || Number(order.extraCharge) || 0;
+    const grandTotal = subtotal + adminExtraCharge;
+
+    return {
+        subtotal: Math.max(0, subtotal),
+        adminExtraCharge: Math.max(0, adminExtraCharge),
+        grandTotal: Math.max(0, grandTotal)
+    };
+}
+
+/**
+ * PART 6: Image Resolver with Safety Fallbacks
+ */
+function resolveProductImage(src) {
+    if (!src || typeof src !== 'string' || src.trim() === '') {
+        return FALLBACK_IMAGE_PLACEHOLDER;
+    }
+    const cleanSrc = src.trim();
+    if (cleanSrc.startsWith('http://') || cleanSrc.startsWith('https://') || cleanSrc.startsWith('data:image/')) {
+        return cleanSrc;
+    }
+    return cleanSrc;
+}
+
+/**
+ * PART 7: Singleton Audio Manager
+ */
+const AudioManager = {
+    currentAudio: null,
+    currentTrackId: null,
+    activeSlider: null,
+    activeTimeDisplay: null,
+
+    playTrack(trackId, audioUrl, sliderEl, timeDisplayEl) {
+        // Pause and reset previous playing audio
+        if (this.currentAudio) {
+            this.currentAudio.pause();
+            if (this.activeSlider) this.activeSlider.value = 0;
+            if (this.activeTimeDisplay) this.activeTimeDisplay.innerText = '0:00';
+            
+            if (this.currentTrackId === trackId) {
+                this.currentAudio = null;
+                this.currentTrackId = null;
+                return false; // Toggled off
+            }
+        }
+
+        const audio = new Audio(audioUrl);
+        this.currentAudio = audio;
+        this.currentTrackId = trackId;
+        this.activeSlider = sliderEl;
+        this.activeTimeDisplay = timeDisplayEl;
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration && sliderEl) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                sliderEl.value = pct || 0;
+            }
+            if (timeDisplayEl) {
+                const mins = Math.floor(audio.currentTime / 60);
+                const secs = Math.floor(audio.currentTime % 60);
+                timeDisplayEl.innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+        });
+
+        audio.addEventListener('ended', () => {
+            if (sliderEl) sliderEl.value = 0;
+            if (timeDisplayEl) timeDisplayEl.innerText = '0:00';
+            this.currentAudio = null;
+            this.currentTrackId = null;
+        });
+
+        audio.play().catch(err => console.error('[AudioManager] Playback error:', err));
+        return true; // Playing
+    },
+
+    seek(percentage) {
+        if (this.currentAudio && this.currentAudio.duration) {
+            this.currentAudio.currentTime = (percentage / 100) * this.currentAudio.duration;
+        }
+    },
+
+    setVolume(volume) {
+        if (this.currentAudio) {
+            this.currentAudio.volume = Math.max(0, Math.min(1, volume));
+        }
+    }
+};
+</script>
+</body>
+</html>

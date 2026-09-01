@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+      }
+      .contaner {
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+      .admin1 {
+        border: 2px solid #d6d6d677;
+        padding: 10px;
+        border-radius: 10px 0 0 10px;
+      }
+      .admi3:hover {
+        background-color: rgb(151, 151, 151);
+      }
+      .admi3 {
+        width: 100%;
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        align-items: center;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .admi1 {
+        margin-bottom: 6px;
+      }
+      .admi3 h4 {
+        text-align: start;
+        width: 120px;
+      }
+      .admi2 img {
+        width: 30px;
+        border-radius: 50%;
+      }
+      .admi2 {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #d6d6d677;
+        border-radius: 50%;
+        margin: 4px;
+      }
+      .admin2 {
+        width: 100%;
+        max-width: 600px;
+        border: 2px solid #d6d6d677;
+        padding: 10px;
+      }
+      .adm2 {
+        display: grid;
+      }
+      .adm3 {
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        background-color: #dddddd;
+        padding: 10px 10px 20px 10px;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+        align-items: center;
+      }
+      .adm7 img {
+        width: 30px;
+        border-radius: 50%;
+      }
+      .adm7 {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        border: 2px solid #d6d6d677;
+        border-radius: 50%;
+        margin: 4px;
+      }
+      .adm4 {
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        background-color: #eeeeee;
+        padding: 20px 10px;
+      }
+      .adm4 p,
+      .adm4 h4 {
+        margin: 0;
+      }
+      .adm5 {
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        border: 2px solid #d6d6d677;
+      }
+      .adm8 img {
+        height: 180px;
+      }
+      .adm8 {
+        width: 250px;
+        height: 180px;
+        border: #eeeeee;
+        justify-content: space-around;
+      }
+      .adm10 {
+        display: grid;
+        gap: 10px;
+        padding: 10px 0;
+      }
+      .adm9 {
+        width: 265px;
+      }
+      .adm9 h3 {
+        margin: 0;
+        width: 250px;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .adm6 p {
+        margin: 0;
+      }
+      .adm11 {
+        width: 250px;
+        display: grid;
+        padding: 10px;
+        gap: 10px;
+      }
+      .admin3 {
+        width: 650px;
+        border: 2px solid #d6d6d677;
+        padding: 10px;
+        border-radius: 0 10px 10px 0;
+      }
+      .ad6 {
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: #dddddd54;
+        padding: 10px 10px 20px 10px;
+      }
+      .ad1 {
+        text-align: center;
+      }
+      .ad1 span {
+        margin: 0 50px 0 0;
+      }
+      .ad1 input {
+        width: 60px;
+        margin: 0 0 0 40px;
+        border: 1px solid #d6d6d677;
+        background-color: #dddddd25;
+        border-radius: 4px;
+      }
+      .schedule-controls #delivery,
+      .schedule-controls #package,
+      .schedule-controls #settlement {
+        width: 100%;
+        background-color: rgb(139, 231, 1);
+        box-shadow: 0 4px 6px rgba(187, 255, 0, 0.3);
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px;
+        color: #000000;
+      }
+      .schedule-controls #delivery:hover,
+      .schedule-controls #package:hover,
+      .schedule-controls #settlement:hover {
+        background-color: green;
+        color: #fff;
+      }
+      .schedule-controls input {
+        background: none;
+        border: none;
+      }
+      .schedule-controls label {
+        font-size: small;
+      }
+      .a1 {
+        display: flex;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .a7 img {
+        height: 120px;
+      }
+      .a7 {
+        width: 120px;
+        height: 120px;
+        text-align: center;
+      }
+      .a8 {
+        display: flex;
+        border: 2px solid #d6d6d677;
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 10px;
+      }
+      .a9 {
+        display: grid;
+        gap: 10px;
+      }
+      .a2 h3 {
+        margin: 10px 0;
+      }
+      .a4 p {
+        margin: 0 0 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contaner">
+      <div class="admin1">
+        <h2>Orders</h2>
+        <div id="orders-list" class="admi1"></div>
+      </div>
+      <div class="admin2">
+        <h2>Details</h2>
+        <div class="adm1">
+          <div class="adm2">
+            <div class="adm3"></div>
+            <div class="adm4">
+              <h4>Address:</h4>
+              <p></p>
+            </div>
+            <div class="adm10">
+              <div class="adm5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="admin3">
+        <h2>Price</h2>
+        <div class="ad6">
+          <div class="ad1">
+            <h4>Calcutation</h4>
+            <div class="price">₹100</div>
+            <br />
+            <span class="pl">+</span>
+            <br />
+            <input type="number" class="ex" />
+            <br />
+            <span class="es">=</span>
+            <br />
+            <div class="total"></div>
+            <br />
+          </div>
+          <!-- Verify that schedule inputs match the ID selectors bound in admin.js -->
+          <div class="schedule-controls">
+            <button id="settlement" type="button">Confirmed</button>
+            <br />
+            <br />
+            <button id="delivery" type="button">Delivery</button>
+            <br />
+            <label for="delivery-schedule-input"
+              >Scheduled Delivery Time:</label
+            >
+            <input
+              type="datetime-local"
+              id="delivery-schedule-input"
+              class="delivery-schedule-input"
+            />
+
+            <br />
+            <br />
+            <button id="package" type="button">Package</button>
+            <br />
+            <label for="package-schedule-input"
+              >Scheduled Package Complete Time:</label
+            >
+            <input
+              type="datetime-local"
+              id="package-schedule-input"
+              class="package-schedule-input"
+            />
+          </div>
+        </div>
+        <h2>Out of Stock</h2>
+        <div class="a9-container">
+          <div class="a8">
+            <div class="a1">
+              <input type="checkbox" id="a3" name="Product" value="Product" />
+              <div class="a7">
+                <img for="a3" src="saree1.png" alt="Product" />
+              </div>
+            </div>
+            <div class="a2">
+              <h3>Product name</h3>
+              <div class="a4">
+                <div class="a5">
+                  <p>colors</p>
+                </div>
+                <div class="a6">
+                  <div class="svg1"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="wsvom.js"></script>
+  </body>
+</html>
