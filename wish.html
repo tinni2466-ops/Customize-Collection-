@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+cursor: default;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #ffd3c4;
+}
+.brand{
+    display: flex;
+    gap: 10px;
+}
+.br-name1{
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+.br-name2 {
+    font-size: 40px;
+    font-weight: bold;
+    background-image: url('https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711611/Ruffle-Sleeve-Dress_d5npo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    -webkit-text-stroke: 2px #d5d5d5;
+}
+.wicontainer{
+    width: 1300px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    padding: 20px 0;
+}
+.right-header svg{
+    cursor: pointer;
+}
+.right-header path{
+    cursor: pointer;
+}
+.right-header{
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    position: fixed;
+    top: 6.6%;
+    left: 90%;
+    z-index: 100;
+}
+header .icon-cart{
+    position: relative;
+}
+header .icon-cart span{
+    display: block;
+    width: 24px;
+    height: 25px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+}
+.cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -400px;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: right 0.5s ease;
+    z-index: 99999;
+}
+body.showCart .cartTab {
+    right: 0; 
+}
+body.showCart .wicontainer {
+    transform: none !important; 
+    margin-right: 400px; 
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab .btn button{
+    background-color: #e8bc0e;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .btn .close{
+    background-color: #eee;
+}
+.cartTab .listCart .item img{
+    width: 100%;
+}
+.cartTab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+/* FIX 1: .back section styled as a background container overlayed behind wishlist items */
+.back {
+    position: relative;
+    width: 100%;
+    min-height: 2500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.back h1{
+    font-size: 100px;
+    color: #ff8fabc4;
+    position: relative;
+    z-index: 2;
+    margin-top: 30%;
+    margin-bottom: 30%;
+    top: -870px;
+    text-shadow: #ff8fabc4 1px 0 10px;
+}
+.back-pattern {
+    position: absolute;
+    top: -8%;
+    left: -2%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern svg {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+.back-pattern1 {
+    position: absolute;
+    top: -48.5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern1 svg {
+    width: 90px;
+    height: 90px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+.back-pattern2 {
+    position: absolute;
+    top: -36%;
+    left: -8%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern2 svg {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+.back-pattern3 {
+    position: absolute;
+    top: -22%;
+    left: 4%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern3 svg {
+    width: 45px;
+    height: 45px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+.back-pattern4 {
+    position: absolute;
+    top: 1%;
+    left: 7%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern4 svg {
+    width: 90px;
+    height: 90px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+.back-pattern5 {
+    position: absolute;
+    top: 16%;
+    left: -8%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern5 svg {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+.back-pattern6 {
+    position: absolute;
+    top: 30%;
+    left: 4%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern6 svg {
+    width: 45px;
+    height: 45px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+.back-pattern7 {
+    position: absolute;
+    top: 42%;
+    left: -2%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    justify-content: space-around;
+    align-content: space-around;
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
+}
+.back-pattern7 svg {
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0px 4px 6px rgba(255 0 0 / 50%));
+}
+/* Wishlist Grid and Button Styling */
+.listProduct .item img{
+    border-radius: 20px;
+    width: 100%;
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5%;
+    position: relative;
+    z-index: 3;
+    display: grid;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    z-index: 99;
+}
+.listProduct .item{
+    background-color: rgba(255, 105, 180, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+.listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+.listProduct .item .addCart{
+    background-color: #ffd3c4;
+    color: #ff8fab;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+.wishlist-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 105, 180, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 1);
+}
+.wishlist-btn:hover {
+    transform: scale(1.1);
+    background: #ffd3c4;
+}
+.wishlist-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #1a1a1a;
+    stroke-width: 2;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+}
+.wishlist-btn.active svg {
+    fill: #ff3b30;
+    stroke: #ff3b30;
+}
+@media screen and (max-width: 600px){
+    .cartTab {
+    width: 400px;
+    height: auto;
+    }
+    .brand{
+        margin-bottom: 40px;
+        margin-left: 0;
+    }
+    .br-name1, .br-name2{
+        font-size: 28px;
+    }
+    .right-header{
+        top: 16%;
+        left: 68%;
+    }
+    .back h1{
+        top: -960px;
+    }
+    .back-pattern {
+        top: 1%;
+        left: -4%;
+        display: grid;
+    }
+    .back-pattern1 {
+        top: -2.5%;
+        margin-left: 38%;
+        display: grid;
+    }
+    .back-pattern2 {
+        top: 8%;
+        left: 10%;
+        display: grid;
+    }
+    .back-pattern3 {
+        top: 0;
+        display: grid;
+    }
+    .back-pattern4 {
+        top: 16%;
+        left: -30%;
+        display: grid;
+    }
+    .back-pattern5 {
+        top: 4%;
+        left: -30%;
+        display: grid;
+    }
+    .back-pattern6 {
+        top: 14%;
+        left: 30%;
+        display: grid;
+    }
+    .back-pattern7 {
+        top: 10%;
+        left: -20%;
+        display: grid;
+    }
+    main .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+        top: 26%;
+    }
+}
+</style>
+</head>
+<body class="">
+    <div class="wicontainer">
+        <!-- HEADER SECTION -->
+        <header>
+            <div class="brand">
+                <div class="br-name1">Customize</div>
+                <div class="br-name2">Collection</div>
+            </div>
+            <div class="right-header">
+                <div class="home"><a href="shop.html">
+                    <svg fill="#000000" width="32" height="32" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" class="jam jam-home">
+                        <path d='M18 18V7.132l-8-4.8-8 4.8V18h4v-2.75a4 4 0 1 1 8 0V18h4zm-6 2v-4.75a2 2 0 1 0-4 0V20H2a2 2 0 0 1-2-2V7.132a2 2 0 0 1 .971-1.715l8-4.8a2 2 0 0 1 2.058 0l8 4.8A2 2 0 0 1 20 7.132V18a2 2 0 0 1-2 2h-6z'/>
+                    </svg></a>
+                </div>
+                <div class="icon-cart">
+                    <svg class="cart" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                    </svg>
+                    <span>0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN SECTION: Background pattern container with "MY WISH" and items grid -->
+        <main>
+            <div class="back">
+                <div class="back-pattern">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <div class="back-pattern1">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <div class="back-pattern2">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <div class="back-pattern3">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <div class="back-pattern4">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <div class="back-pattern5">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <div class="back-pattern6">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <div class="back-pattern7">
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                    <svg viewBox="0 0 1024 1024"><path d="M927.4 273.5v-95.4h-87.9V82.8h-201v95.3h-87.9v95.4h-78.5v-95.4h-88V82.8H183.2v95.3H95.3v95.4H16.7v190.6h78.6v95.4h75.3v95.3H246v95.3h87.9v95.4h100.5v95.3h153.9v-95.3h100.4v-95.4h88v-95.3H852.1v-95.3h75.3v-95.4h78.5V273.5z" fill="#E02D2D" /></svg>
+                </div>
+                <h1>MY WISH</h1>
+            </div>
+            <div class="listProduct">
+                <!-- Wishlist items load dynamically here -->
+            </div>
+        </main>
+
+        <!-- CART TAB SECTION -->
+        <div class="cartTab">
+            <h1>shopping Cart</h1>
+            <div class="listCart">
+            </div>
+            <div class="btn">
+                <button class="close">CLOSE</button>
+                <button class="checkOut">CHECK Out</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+let iconCart = document.querySelector('.icon-cart');
+let closeCart = document.querySelector('.close');
+let body = document.querySelector('body');
+let listProductHTML = document.querySelector('.listProduct');
+let listCartHTML = document.querySelector('.listCart');
+let iconCartSpan = document.querySelector('.icon-cart span');
+
+let listProducts = [];
+let carts = [];
+
+// Helper to get a unique storage key based on the logged-in user's email
+const getUserStorageKey = (baseKey) => {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser && currentUser.email) {
+        return `${baseKey}_${currentUser.email.trim().toLowerCase()}`;
+    }
+    return `${baseKey}_guest`;
+};
+
+// Reads saved stock status from Admin storage
+const getStockStatus = () => {
+    return JSON.parse(localStorage.getItem("admin_stock_status") || "{}");
+};
+
+// Toggle Cart Drawer
+iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart');
+});
+closeCart.addEventListener('click', () => {
+    body.classList.toggle('showCart');
+});
+
+// Initialize application on page load with account isolation
+const initApp = () => {
+    // 1. Guard check: Optional redirect if user must be logged in to view wishlist
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (!currentUser || !currentUser.email) {
+        alert("Please log in first to view your wishlist!");
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // 2. Load account-specific cart data
+    let cartKey = getUserStorageKey('cart');
+    let savedCart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    carts = savedCart;
+
+    fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        listProducts = data;
+        if(localStorage.getItem(cartKey)){
+            carts = JSON.parse(localStorage.getItem(cartKey));
+            addCartToHTML();
+        }
+        loadWishlist();
+    });
+};
+
+// --- WISHLIST RENDERING SECTION (Account-Specific & Stock-Aware) ---
+const loadWishlist = () => {
+    let wishlistContainer = document.querySelector('.listProduct');
+    let wishlistKey = getUserStorageKey('wishlist');
+    let wishlist = JSON.parse(localStorage.getItem(wishlistKey)) || [];
+    const stockStatus = getStockStatus();
+
+    if (wishlist.length === 0) {
+        wishlistContainer.innerHTML = `<p style="grid-column: span 4; text-align: center;">Your wishlist is empty.</p>`;
+        return;
+    }
+
+    wishlistContainer.innerHTML = '';
+    wishlist.forEach(product => {
+        const productStock = stockStatus[product.id] || {};
+        let colorsArray = Array.isArray(product.color) ? product.color : [product.color || "yellow"];
+
+        const isMainProductOut = productStock.isProductOutOfStock === true;
+        const areAllColorsOut = colorsArray.every(
+            (col) => productStock.colorsOutOfStock?.[col] === true
+        );
+        const isCartDisabled = isMainProductOut || areAllColorsOut;
+
+        let buttonText = "Add To Cart";
+        if (isMainProductOut) {
+            buttonText = "Out of Stock";
+        } else if (areAllColorsOut) {
+            buttonText = "Colors Out of Stock";
+        }
+
+        let itemCard = document.createElement('div');
+        itemCard.classList.add('item');
+        itemCard.dataset.id = product.id;
+        itemCard.innerHTML = `
+            <button class="wishlist-btn active" onclick="removeFromWishlist(${product.id}, this)">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+            <div class="product-img-wrapper" style="position: relative; display: inline-block; width: 100%;">
+                <img src="${product.image}" alt="${product.name}" style="${isMainProductOut ? 'opacity: 0.5; filter: grayscale(40%); transition: opacity 0.3s ease;' : ''}">
+                ${isMainProductOut ? `
+                    <div class="out-of-stock-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.75); color: #ff3333; padding: 6px 14px; font-weight: bold; font-size: 0.9rem; border-radius: 4px; border: 1px solid #ff3333; text-transform: uppercase; letter-spacing: 1px; pointer-events: none; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+                        Out of Stock
+                    </div>
+                ` : ''}
+            </div>
+            <h2>${product.name}</h2>
+            <div class="price">₹${product.price}</div>
+            <button class="addCart" ${isCartDisabled ? 'disabled style="cursor:not-allowed; opacity:0.5;"' : ""}>
+                ${buttonText}
+            </button>
+        `;
+        wishlistContainer.appendChild(itemCard);
+    });
+};
+
+// Remove item from wishlist using account-specific key
+const removeFromWishlist = (productId, btn) => {
+    let wishlistKey = getUserStorageKey('wishlist');
+    let wishlist = JSON.parse(localStorage.getItem(wishlistKey)) || [];
+    wishlist = wishlist.filter(item => item.id != productId);
+    localStorage.setItem(wishlistKey, JSON.stringify(wishlist));
+    loadWishlist(); 
+};
+
+// Listen to clicks on the wishlist product grid to trigger Add To Cart functionality
+listProductHTML.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if(positionClick.classList.contains('addCart')){
+        let product_id = positionClick.parentElement.dataset.id;
+        addToCart(product_id);
+    }
+});
+
+const addToCart = (product_id) => {
+    let productInfo = listProducts.find(value => value.id == product_id);
+    if (!productInfo) return;
+
+    const stockStatus = getStockStatus();
+    const productStock = stockStatus[product_id] || {
+        isProductOutOfStock: false,
+        colorsOutOfStock: {},
+    };
+
+    // Prevent out-of-stock additions
+    if (productStock.isProductOutOfStock) {
+        alert("This product is currently out of stock!");
+        return;
+    }
+    
+    let colors = Array.isArray(productInfo.color) ? productInfo.color : [productInfo.color || 'yellow'];
+
+    // Filter available colors
+    let availableColors = colors.filter(
+        (col) => !productStock.colorsOutOfStock?.[col]
+    );
+
+    if (availableColors.length === 0) {
+        alert("All color variants for this product are currently out of stock!");
+        return;
+    }
+
+    let randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+
+    let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id && value.color == randomColor);
+    
+    if(carts.length <= 0 || positionThisProductInCart < 0){
+        carts.push({
+            product_id: product_id,
+            color: randomColor,
+            quantity: 1
+        });
+    } else {
+        carts[positionThisProductInCart].quantity = carts[positionThisProductInCart].quantity + 1;
+    }
+    addCartToHTML();
+    addCartToMemory();
+};
+
+const addCartToMemory = () => {
+    let cartKey = getUserStorageKey('cart');
+    localStorage.setItem(cartKey, JSON.stringify(carts));
+};
+
+const addCartToHTML = () => {
+    listCartHTML.innerHTML = '';
+    let totalQuantity = 0;
+    if(carts.length > 0){
+        carts.forEach(cart => {
+            totalQuantity = totalQuantity + cart.quantity;
+            let newCart = document.createElement('div');
+            newCart.classList.add('item');
+            newCart.dataset.id = cart.product_id;
+            let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
+            let info = listProducts[positionProduct];
+            if(info) {
+                newCart.innerHTML = `
+                    <div class="image">
+                        <img src="${info.image}" alt="">
+                    </div>
+                    <div class="name">
+                        ${info.name}
+                        <div style="width: 25px; height: 12px; background-color: ${cart.color || 'yellow'}; border: 1px solid #ccc; margin-top: 4px; border-radius: 2px;"></div>
+                    </div>
+                    <div class="totalPrice">
+                        ₹${info.price * cart.quantity}
+                    </div>
+                    <div class="quantity">
+                        <span class="minus"><</span>
+                        <span>${cart.quantity}</span>
+                        <span class="plus">></span>
+                    </div>
+                `;
+                listCartHTML.appendChild(newCart);
+            }
+        });
+    }
+    if (iconCartSpan) iconCartSpan.innerText = totalQuantity;
+};
+
+listCartHTML.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
+        let product_id = positionClick.parentElement.parentElement.dataset.id;
+        let type = 'minus';
+        if(positionClick.classList.contains('plus')){
+            type = 'plus';
+        }
+        changeQuantity(product_id, type);
+    }
+});
+
+const changeQuantity = (product_id, type) => {
+    let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+    if(positionItemInCart >= 0){
+        switch (type) {
+            case 'plus':
+                carts[positionItemInCart].quantity = carts[positionItemInCart].quantity + 1;
+                break;
+            default:
+                let valueChange = carts[positionItemInCart].quantity - 1;
+                if(valueChange > 0){
+                    carts[positionItemInCart].quantity = valueChange;
+                }else{
+                    carts.splice(positionItemInCart, 1);
+                }
+                break;
+        }
+    }
+    addCartToMemory();
+    addCartToHTML();
+};
+
+// Initialize application on page load
+initApp();
+</script>
+</html>

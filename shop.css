@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.brand{
+    display: flex;
+    gap: 10px;
+}
+.br-name1{
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+.br-name2 {
+    font-size: 40px;
+    font-weight: bold;
+    background-image: url('https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711611/Ruffle-Sleeve-Dress_d5npo1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    color: #fff;
+    border-radius: 10px;
+    -webkit-text-stroke: 2px #d5d5d5;
+}
+.container{
+    width: 1300px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+svg{
+    width: 40px;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+    padding: 20px 0;
+}
+.right-header{
+    align-items: center;
+    display: flex;
+    gap: 4px;
+    margin-right: 70px;
+}
+.wishlist{
+    padding: 0 0 0 8px;
+}
+header .login a{
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.login a:hover {
+    background-color: #818181;
+}
+.login a:active {
+    transform: scale(0.97);
+}
+.right-header svg{
+    cursor: pointer;
+}
+header .icon-cart{
+    position: fixed;
+    left: 91%;
+    z-index: 100;
+}
+header .icon-cart span{
+    display: block;
+    width: 24px;
+    height: 25px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+}
+.buttons {
+    display: flex;
+    gap: 10px;
+    order: 2; 
+}
+.buttons input[type="radio"] {
+    display: none;
+}
+.buttons .butn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+.buttons .butn:hover {
+    background-color: #d5d5d5;
+}
+.buttons input[type="radio"]:checked + .butn {
+    background-color: #007bff;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+.listProduct .item img{
+    border-radius: 20px;
+    width: 100%;
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.listProduct .item{
+    background-color: #ffffff;
+    padding: 20px;
+}
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+.listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+.listProduct .item .addCart{
+    background-color: #353432;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+.mtop {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding: 0 0 20px 0;
+}
+.sir {
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-grow: 1;
+    order: 1;
+}
+.sir .serc {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    color: #666;
+    pointer-events: none;
+}
+.sir .search {
+    width: 90%;
+}
+.search .pr-search {
+    width: 100%;
+    padding: 12px 12px 14px 52px;
+    font-size: 15px;
+    border: none; 
+    border-radius: 20px;
+    outline: none;
+    background-color: #e0e0e0;
+    transition: border-color 0.3s ease;
+}
+.cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -400px;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: right 0.5s ease;
+    z-index: 99999;
+}
+body.showCart .cartTab {
+    right: 0; 
+}
+body.showCart .container {
+    transform: none !important; 
+    margin-right: 400px; 
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab .btn button{
+    background-color: #e8bc0e;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .btn .close{
+    background-color: #eee;
+}
+.cartTab .listCart .item img{
+    width: 100%;
+}
+.cartTab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+/* Wishlist Heart Icon Styling */
+.item {
+    position: relative; /* Ensures absolute positioning of the heart button works relative to the card */
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.2s ease, background 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.1);
+    background: #ffffff;
+}
+
+.wishlist-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #1a1a1a;
+    stroke-width: 2;
+    transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+/* Active red state when liked */
+.wishlist-btn.active svg {
+    fill: #ff3b30;
+    stroke: #ff3b30;
+}
+
+@media screen and (max-width: 600px){
+    main .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cartTab {
+    width: 400px;
+    height: auto;
+    }
+    .sir .search {
+    width: 50%;
+    }
+    .br-name1, .br-name2{
+        font-size: 28px;
+    }
+    header{
+        display: flow;
+    }
+    .brand{
+        margin-left: 0;
+    }
+    .right-header{
+        padding-top: 10px;
+    }
+    header .icon-cart{
+        left: 85%;
+    }
+    .sir .search {
+        width: 85%;
+    }
+    .mtop{
+        display: flow;
+    }
+    .buttons{
+        padding-bottom: 10px;
+        padding-left: 25%;
+    }
+}

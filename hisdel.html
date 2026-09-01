@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Tracking & History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --brand-dark: #643700;
+        --accent: #b70707;
+        --bg-base: #fdfaf6;
+        --bg-card: #f4f0ec;
+        --bg-border: #ddd2c7;
+        --text-main: #2c241f;
+        --text-muted: #777;
+        --shadow: 0 8px 30px rgba(60, 35, 15, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f0ec;
+        color: var(--text-main);
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+      .container {
+        width: 100%;
+        max-width: 800px;
+      }
+      /* ============================================================
+           TRACKING CARD
+        ============================================================ */
+      .deliver1 {
+        background-color: var(--bg-base);
+        box-shadow: var(--shadow);
+        border-radius: 24px;
+        padding: 32px;
+        border: 1px solid var(--bg-border);
+      }
+      .delive1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--bg-card);
+        padding-bottom: 16px;
+        margin-bottom: 24px;
+      }
+      .delive1 h1 {
+        font-size: 1.5rem;
+        color: var(--brand-dark);
+        font-weight: 600;
+      }
+      .order-id-display {
+        margin-top: 6px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+      /* ============================================================
+           TIMELINE
+        ============================================================ */
+
+      .tracking-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        position: relative;
+        padding-left: 20px;
+      }
+      .tracking-timeline::before {
+        content: "";
+        position: absolute;
+        left: 29px;
+        top: 15px;
+        bottom: 15px;
+        width: 4px;
+        background-color: var(--bg-border);
+        z-index: 1;
+      }
+      .timeline-step {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        z-index: 2;
+      }
+      .node-indicator {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        border-radius: 50%;
+        background-color: var(--bg-base);
+        border: 4px solid var(--bg-border);
+        transition: all 0.3s ease;
+      }
+      .timeline-step.active .node-indicator {
+        border-color: var(--brand-dark);
+        background-color: var(--brand-dark);
+        box-shadow: 0 0 0 4px rgba(100, 55, 0, 0.15);
+      }
+      .step-details {
+        flex: 1;
+        background-color: #fff;
+        padding: 16px 20px;
+        border-radius: 12px;
+        border: 1px solid var(--bg-card);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .step-details h4 {
+        font-size: 0.95rem;
+        color: var(--text-main);
+        font-weight: 500;
+      }
+      .step-status {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 4px 8px;
+        border-radius: 20px;
+        background: #eee;
+        color: #777;
+      }
+      .timeline-step.active .step-status {
+        background: #eadccf;
+        color: var(--brand-dark);
+      }
+      .step-timestamp {
+        width: 100%;
+        color: var(--text-muted);
+        font-size: 0.78rem;
+      }
+      .step-timestamp input {
+        border: 1px solid var(--bg-border);
+        background: var(--bg-base);
+        font-family: inherit;
+        padding: 4px 8px;
+        border-radius: 6px;
+        color: var(--brand-dark);
+        font-size: 0.8rem;
+        pointer-events: none;
+        width: 100%;
+      }
+      /* ============================================================
+           EMPTY STATE
+        ============================================================ */
+      .waiting-state {
+        text-align: center;
+        padding: 30px 20px;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+      /* ============================================================
+           HISTORY CARD
+        ============================================================ */
+      .deliver2 {
+        background-color: var(--bg-card);
+        box-shadow: var(--shadow);
+        border-radius: 24px;
+        padding: 24px;
+        border: 1px solid var(--bg-border);
+      }
+      .liver1 {
+        background-color: var(--bg-base);
+        border-radius: 16px;
+        padding: 20px;
+      }
+      .eliver1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+        color: var(--brand-dark);
+      }
+      .customer-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .profile-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--accent);
+      }
+      .badge-owner {
+        background-color: var(--brand-dark);
+        color: #fff;
+        font-size: 0.72rem;
+        padding: 4px 8px;
+        border-radius: 20px;
+      }
+      .history-section {
+        margin-top: 16px;
+        background: #fff;
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid var(--bg-border);
+      }
+      .badge-price {
+        font-weight: 700;
+        color: var(--brand-dark);
+        font-size: 1.1rem;
+      }
+      .history-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 0.84rem;
+      }
+      .history-item:last-child {
+        border-bottom: none;
+      }
+      .status-badge {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        background: #eee;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+      .brand {
+        display: flex;
+        gap: 10px;
+      }
+      .right-header {
+        position: fixed;
+        left: 90%;
+      }
+      .br-name1 {
+        font-size: 40px;
+        font-weight: bold;
+        padding: 10px 0;
+      }
+      .br-name2 {
+        font-size: 40px;
+        font-weight: bold;
+        background-image: url(https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711611/Ruffle-Sleeve-Dress_d5npo1.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 10px;
+        color: #fff;
+        border-radius: 10px;
+        -webkit-text-stroke: 2px #d5d5d5;
+      }
+      @media screen and (max-width: 600px) {
+        .br-name1, .br-name2{
+          font-size: 28px;
+        }
+        .right-header{
+          top: 19%;
+          left: 84%;
+        }
+        .brand{
+          margin-bottom: 40px;
+        }
+        body {
+          padding: 20px 12px;
+        }
+        .deliver1 {
+          padding: 20px;
+        }
+        .step-details {
+          padding: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="brand">
+        <div class="br-name1">Customize</div>
+        <div class="br-name2">Collection</div>
+      </div>
+      <div class="right-header">
+        <div class="home">
+          <a href="shop.html">
+            <svg
+              fill="#000000"
+              width="32"
+              height="32"
+              viewBox="-2 -2 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMinYMin"
+              class="jam jam-home"
+            >
+              <path
+                d="M18 18V7.132l-8-4.8-8 4.8V18h4v-2.75a4 4 0 1 1 8 0V18h4zm-6 2v-4.75a2 2 0 1 0-4 0V20H2a2 2 0 0 1-2-2V7.132a2 2 0 0 1 .971-1.715l8-4.8a2 2 0 0 1 2.058 0l8 4.8A2 2 0 0 1 20 7.132V18a2 2 0 0 1-2 2h-6z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         TRACKING
+         ============================================================ -->
+
+    <div class="container">
+      <div class="deliver1">
+        <div class="delive1">
+          <div>
+            <h1>Order Tracking</h1>
+
+            <div id="tracking-order-id" class="order-id-display">
+              No order selected
+            </div>
+          </div>
+        </div>
+
+        <div id="tracking-content">
+          <!-- Dynamic content -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         HISTORY
+         ============================================================ -->
+
+    <div class="container" id="history-card-container" style="display: none">
+      <div class="deliver2">
+        <div class="liver1">
+          <div class="eliver1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#643700"
+              width="28px"
+              height="28px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"
+              />
+            </svg>
+
+            <h2>Order History Details</h2>
+          </div>
+
+          <div class="customer-card">
+            <img id="hist-avatar" class="profile-avatar" src="" alt="Avatar" />
+
+            <div style="flex: 1">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  gap: 10px;
+                "
+              >
+                <h3
+                  id="hist-name"
+                  style="font-size: 1rem; color: var(--brand-dark)"
+                >
+                  ---
+                </h3>
+
+                <span
+                  id="hist-talk-owner"
+                  class="badge-owner"
+                  style="display: none"
+                >
+                  ✔ Talk To Owner
+                </span>
+              </div>
+
+              <p
+                id="hist-address"
+                style="
+                  font-size: 0.8rem;
+                  color: var(--text-muted);
+                  margin-top: 4px;
+                "
+              >
+                Address: N/A
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="history-section">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <h4>Total Amount:</h4>
+
+            <span id="hist-total" class="badge-price"> ₹0 </span>
+          </div>
+        </div>
+
+        <div class="history-section" id="hist-customization">
+          <!-- Customization answers -->
+        </div>
+
+        <div class="history-section">
+          <h4>Order Status</h4>
+
+          <span id="hist-status" class="status-badge"> --- </span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      "use strict";
+
+      /* ============================================================
+   STORAGE KEYS & CONSTANTS
+   ============================================================ */
+      const TRACKING_STORAGE_KEYS = Object.freeze({
+        ORDERS: "app_pending_orders",
+        ACTIVE_ORDER: "app_active_order_id",
+      });
+
+      const TRACKING_EVENTS = Object.freeze({
+        ORDER_UPDATED: "orderUpdated",
+        ORDER_COMPLETED: "orderCompleted",
+      });
+
+      const STATUS_RANK = Object.freeze({
+        PENDING: 0,
+        CUSTOMIZATION_IN_PROGRESS: 0,
+        READY_FOR_CONFIRMATION: 0,
+        PAID: 0,
+        SETTLED: 1,
+        OUT_FOR_DELIVERY: 2,
+        COMPLETED: 3,
+      });
+
+      /* ============================================================
+   DATA ACCESS & ACCOUNT FILTERING
+   ============================================================ */
+      function getStoredOrders() {
+        try {
+          const raw = localStorage.getItem(TRACKING_STORAGE_KEYS.ORDERS);
+          if (!raw) return [];
+          const parsed = JSON.parse(raw);
+          return Array.isArray(parsed) ? parsed : [];
+        } catch (error) {
+          console.error("Tracking: unable to read orders:", error);
+          return [];
+        }
+      }
+
+      function getActiveOrderId() {
+        try {
+          return localStorage.getItem(TRACKING_STORAGE_KEYS.ACTIVE_ORDER);
+        } catch (error) {
+          console.error("Tracking: unable to read active order ID:", error);
+          return null;
+        }
+      }
+
+      function getCurrentUser() {
+        try {
+          const raw = localStorage.getItem("currentUser");
+          return raw ? JSON.parse(raw) : null;
+        } catch (error) {
+          return null;
+        }
+      }
+
+      /**
+       * Retrieves all orders belonging exclusively to the currently logged-in account.
+       * Sorted chronologically (newest orders first).
+       */
+      function getUserOrders() {
+        const orders = getStoredOrders();
+        if (!orders.length) return [];
+
+        const currentUser = getCurrentUser();
+
+        // Primary filtering rule: Account email matching
+        if (currentUser && currentUser.email) {
+          const userOrders = orders.filter(
+            (order) =>
+              order.customer && order.customer.email === currentUser.email,
+          );
+
+          return userOrders.sort(
+            (a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0),
+          );
+        }
+
+        // Fallback for guest checkout / session-based active order tracking
+        const activeId = getActiveOrderId();
+        if (activeId) {
+          return orders.filter((order) => order.id === activeId);
+        }
+
+        return [];
+      }
+
+      /**
+       * Gets the primary active/tracked order (or the latest active order).
+       */
+      function getActiveTrackingOrder(userOrders) {
+        if (!userOrders.length) return null;
+
+        const activeId = getActiveOrderId();
+        if (activeId) {
+          const activeOrder = userOrders.find((order) => order.id === activeId);
+          if (activeOrder) return activeOrder;
+        }
+
+        // Default to the most recent non-completed order, or simply the newest order
+        const nonCompleted = userOrders.find(
+          (order) => order.status !== "COMPLETED",
+        );
+        return nonCompleted || userOrders[0];
+      }
+
+      /* ============================================================
+   UTILITY & NORMALIZATION
+   ============================================================ */
+      function normalizeTrackingOrder(order) {
+        if (!order) return null;
+
+        return {
+          ...order,
+          customer: order.customer || {
+            name: "Customer",
+            email: "N/A",
+            phone: "N/A",
+            avatar: "",
+          },
+          address: order.address || {},
+          items: Array.isArray(order.items) ? order.items : [],
+          customizationChat: Array.isArray(order.customizationChat)
+            ? order.customizationChat
+            : [],
+          adminExtraCharge: Number(order.adminExtraCharge) || 0,
+          talkToOwnerFee: Number(order.talkToOwnerFee) || 50,
+          talkToOwnerRequested: Boolean(order.talkToOwnerRequested),
+          paymentStatus: order.paymentStatus || "UNPAID",
+          status: order.status || "PENDING",
+          isCompleted: Boolean(
+            order.isCompleted || order.status === "COMPLETED",
+          ),
+          scheduledDeliveryTime: order.scheduledDeliveryTime || null,
+          scheduledPackageTime: order.scheduledPackageTime || null,
+          timestamps: order.timestamps || {},
+        };
+      }
+
+      function calculateTotals(order) {
+        const items = Array.isArray(order.items) ? order.items : [];
+        const subtotal = items.reduce((total, item) => {
+          const price = Number(item.price) || 0;
+          const qty = Number(item.qty ?? item.quantity ?? 1) || 1;
+          return total + price * qty;
+        }, 0);
+
+        const ownerFee = order.talkToOwnerRequested
+          ? Number(order.talkToOwnerFee || 0)
+          : 0;
+        const extraCharge = Number(order.adminExtraCharge) || 0;
+
+        return {
+          subtotal,
+          ownerFee,
+          extraCharge,
+          grandTotal: subtotal + ownerFee + extraCharge,
+        };
+      }
+
+      function escapeHTML(value) {
+        return String(value ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function formatDateTime(value) {
+        if (!value) return "Not yet completed";
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return "Not available";
+
+        return date.toLocaleString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      }
+
+      /* ============================================================
+   UI RENDERING FUNCTIONS
+   ============================================================ */
+
+      /**
+       * Renders the primary timeline component for active orders.
+       */
+      function renderTimeline(order) {
+        const container = document.getElementById("tracking-content");
+        if (!container) return;
+
+        const status = order.status || "PENDING";
+        const currentRank = STATUS_RANK[status] ?? 0;
+        const settlementDone = currentRank >= 1;
+        const deliveryDone = currentRank >= 2;
+        const packageDone = currentRank >= 3;
+
+        container.innerHTML = `
+    <div style="margin-bottom:20px; padding:12px 14px; background:#f8f2ec; border-radius:12px; font-size:0.82rem;">
+      <strong>Current Status:</strong> ${escapeHTML(status)}
+    </div>
+
+    <div class="tracking-timeline">
+      <!-- SETTLEMENT STEP -->
+      <div class="timeline-step ${settlementDone ? "active" : ""}">
+        <div class="node-indicator"></div>
+        <div class="step-details">
+          <div>
+            <h4>Order Settlement Confirmed</h4>
+            <div class="step-timestamp">
+              ${
+                order.timestamps && order.timestamps.settlement
+                  ? formatDateTime(order.timestamps.settlement)
+                  : "Waiting for settlement confirmation"
+              }
+            </div>
+          </div>
+          <span class="step-status">${settlementDone ? "Completed" : "Pending"}</span>
+        </div>
+      </div>
+
+      <!-- DELIVERY STEP -->
+      <div class="timeline-step ${deliveryDone ? "active" : ""}">
+        <div class="node-indicator"></div>
+        <div class="step-details">
+          <div>
+            <h4>Out for Delivery</h4>
+            <div class="step-timestamp">
+              ${
+                order.timestamps && order.timestamps.delivery
+                  ? formatDateTime(order.timestamps.delivery)
+                  : order.scheduledDeliveryTime
+                    ? `Scheduled: ${formatDateTime(order.scheduledDeliveryTime)}`
+                    : "Waiting for delivery"
+              }
+            </div>
+          </div>
+          <span class="step-status">${deliveryDone ? "Completed" : "Pending"}</span>
+        </div>
+      </div>
+
+      <!-- PACKAGE COMPLETE STEP -->
+      <div class="timeline-step ${packageDone ? "active" : ""}">
+        <div class="node-indicator"></div>
+        <div class="step-details">
+          <div>
+            <h4>Package Complete</h4>
+            <div class="step-timestamp">
+              ${
+                order.timestamps && order.timestamps.package
+                  ? formatDateTime(order.timestamps.package)
+                  : order.scheduledPackageTime
+                    ? `Scheduled: ${formatDateTime(order.scheduledPackageTime)}`
+                    : "Waiting for package completion"
+              }
+            </div>
+          </div>
+          <span class="step-status">${packageDone ? "Completed" : "Pending"}</span>
+        </div>
+      </div>
+    </div>
+  `;
+      }
+
+      /**
+       * Builds HTML markup for a single completed order history record.
+       */
+      function buildHistoryCardMarkup(order) {
+        const totals = calculateTotals(order);
+        const a = order.address || {};
+        const fullAddress =
+          [a.address1, a.city, a.state, a.zip, a.country]
+            .filter(Boolean)
+            .join(", ") || "Address: N/A";
+
+        const history = Array.isArray(order.customizationChat)
+          ? [...order.customizationChat]
+          : [];
+        history.sort(
+          (a, b) => new Date(a.timestamp || 0) - new Date(b.timestamp || 0),
+        );
+
+        // Render each item along with its specific 6 customization Q&As
+        const itemsWithCustomizationHTML = (order.items || [])
+          .map((item, itemIdx) => {
+            // Filter Q&As belonging specifically to this product (using itemNumber)
+            const itemHistory = history.filter(
+              (c) => (c.itemNumber || 1) === itemIdx + 1,
+            );
+
+            const qnaHTML =
+              itemHistory.length === 0
+                ? `<p style="color:#777; font-size:0.82rem; margin: 4px 0 0 0;">No customization answers recorded for this item.</p>`
+                : itemHistory
+                    .map(
+                      (qItem) => `
+                <div class="history-item" style="margin-top: 4px;">
+                  <strong>Q${escapeHTML(qItem.qIndex || "")}:</strong> ${escapeHTML(qItem.q || "")}<br>
+                  <span style="color:var(--accent); font-weight:600;">
+                    👉 ${escapeHTML(qItem.a || "")}
+                  </span>
+                </div>
+              `,
+                    )
+                    .join("");
+
+            return `
+        <div class="product-history-block" style="border-bottom: 1px solid #eee; padding-bottom: 12px; margin-bottom: 14px;">
+          <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 8px;">
+            <div style="width:60px; height:60px; border-radius:8px; overflow:hidden; flex-shrink:0;">
+              <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div>
+              <h2 style="font-size:1rem; margin:0 0 4px 0;">${escapeHTML(item.name)}</h2>
+              <div class="colo" style="font-size:0.85rem; color:#555;">
+                <span>Color: </span>
+                <div class="color" style="background-color: ${escapeHTML(item.color)}; display:inline-block; width:14px; height:14px; border-radius:50%; margin-left:4px; vertical-align:middle; border:1px solid #ccc;"></div>
+                <span style="margin-left:10px;">Size: <strong>${escapeHTML(item.size || "Standard")}</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="margin: 8px 0 4px 0; color:var(--brand-dark); font-size: 0.9rem;">Customization Answers</h4>
+          ${qnaHTML}
+        </div>
+      `;
+          })
+          .join("");
+
+        return `
+    <div class="deliver2" style="margin-bottom: 24px;">
+      <div class="liver1">
+        <div class="eliver1" style="justify-content: space-between;">
+          <span><strong>Order ID:</strong> ${escapeHTML(order.id)}</span>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">
+            Created: ${formatDateTime(order.createdAt)}
+          </span>
+        </div>
+        <div class="customer-card">
+          <img class="profile-avatar" src="${escapeHTML(order.customer.avatar || "")}" alt="${escapeHTML(order.customer.name || "Customer")}">
+          <div>
+            <h3>${escapeHTML(order.customer.name || "Customer")}</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">${escapeHTML(fullAddress)}</p>
+            ${order.talkToOwnerRequested ? `<span class="badge-owner">Talk to Owner Requested</span>` : ""}
+          </div>
+        </div>
+        <div class="history-section">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <span class="status-badge">${escapeHTML(order.status)}</span>
+            <span class="badge-price">₹${totals.grandTotal}</span>
+          </div>
+          <div class="order-items-container">
+            ${itemsWithCustomizationHTML}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+      }
+
+      /**
+       * Renders all completed order history records for the authenticated account.
+       */
+      function renderHistory(userOrders) {
+        const historyContainer = document.getElementById(
+          "history-card-container",
+        );
+        if (!historyContainer) return;
+
+        const completedOrders = userOrders.filter(
+          (order) => order.status === "COMPLETED",
+        );
+
+        if (completedOrders.length === 0) {
+          historyContainer.style.display = "none";
+          historyContainer.innerHTML = "";
+          return;
+        }
+
+        historyContainer.style.display = "block";
+        historyContainer.innerHTML = completedOrders
+          .map((order) => buildHistoryCardMarkup(order))
+          .join("");
+      }
+
+      /* ============================================================
+   MAIN INITIALIZATION & DISPATCH
+   ============================================================ */
+      function renderTrackingPage() {
+        const rawOrders = getUserOrders();
+        const userOrders = rawOrders.map(normalizeTrackingOrder);
+        const orderIdElement = document.getElementById("tracking-order-id");
+
+        if (!userOrders.length) {
+          if (orderIdElement) {
+            orderIdElement.innerText = "No orders found for this account";
+          }
+
+          const content = document.getElementById("tracking-content");
+          if (content) {
+            content.innerHTML = `
+        <div class="waiting-state">
+          No orders are currently available for tracking on this account.
+        </div>
+      `;
+          }
+
+          const history = document.getElementById("history-card-container");
+          if (history) {
+            history.style.display = "none";
+            history.innerHTML = "";
+          }
+          return;
+        }
+
+        const activeOrder = getActiveTrackingOrder(userOrders);
+
+        if (orderIdElement && activeOrder) {
+          orderIdElement.innerText = `Order ID: ${activeOrder.id}`;
+        }
+
+        if (activeOrder) {
+          renderTimeline(activeOrder);
+        }
+
+        renderHistory(userOrders);
+      }
+
+      /* ============================================================
+   EVENT LISTENERS & POLLING
+   ============================================================ */
+      window.addEventListener("storage", (event) => {
+        if (
+          event.key === TRACKING_STORAGE_KEYS.ORDERS ||
+          event.key === TRACKING_STORAGE_KEYS.ACTIVE_ORDER
+        ) {
+          renderTrackingPage();
+        }
+      });
+
+      window.addEventListener(
+        TRACKING_EVENTS.ORDER_UPDATED,
+        renderTrackingPage,
+      );
+      window.addEventListener(
+        TRACKING_EVENTS.ORDER_COMPLETED,
+        renderTrackingPage,
+      );
+      window.addEventListener("app:order_updated", renderTrackingPage);
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderTrackingPage();
+
+        // Background refresh to keep active schedules aligned
+        setInterval(() => {
+          renderTrackingPage();
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>

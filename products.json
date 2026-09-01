@@ -1,0 +1,1658 @@
+[
+  {
+    "id": 1,
+    "name": "Mundum Neriyathum Saree",
+    "price": "450",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711596/Mundum-Neriyathum_mnhu3f.png",
+    "description": "A beautiful, traditional two-piece attire featuring classic geometric borders. Crafted meticulously to honor authentic lineage with a lightweight, comfortable presentation."
+  },
+  {
+    "id": 2,
+    "name": "Jamdani Saree",
+    "price": "1200",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711582/Jamdani_rvnozv.png",
+    "description": "Exquisite hand-woven artistry showcasing historic fine motifs. A premium sheer textile drape ideal for setting an unforgettable luxury statement at high-end celebrations."
+  },
+  {
+    "id": 3,
+    "name": "Traditional Assamese Mekhela Chador",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711591/Mekhela-Chador1_rchtny.png",
+    "description": "Traditional two-piece luxury drape featuring specialized local motifs. Custom engineered to fit your posture beautifully with crisp, elegant folding patterns."
+  },
+  {
+    "id": 4,
+    "name": "Paithani Border Mekhela Chador",
+    "price": "1049",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711592/Mekhela-Chador2_omqvww.png",
+    "description": "An alternate stylized cut of our custom two-piece signature drape. Enhanced with distinct patterns and carefully selected premium borders for added poise."
+  },
+  {
+    "id": 5,
+    "name": "Cape Saree",
+    "price": "1150",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711358/Cape-Saree_nmzgvo.png",
+    "description": "A gorgeous contemporary fusion piece featuring an attached premium overlay drape. Gives an effortless, majestic structural flow to your everyday movement."
+  },
+  {
+    "id": 6,
+    "name": "Net Saree",
+    "price": "799",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711593/Net-Saree_zbppxd.png",
+    "description": "Delicate, premium sheer fabric layered with meticulous border accents. Designed to feel virtually weightless while holding a beautiful, precise contour shape."
+  },
+  {
+    "id": 7,
+    "name": "Half Saree",
+    "price": "1299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711629/Half-Saree_o2tk0y.png",
+    "description": "A vivid youthful festive classic combining structured pleating with a complementary drape layout. Custom-tailored to celebrate life's most memorable moments."
+  },
+  {
+    "id": 8,
+    "name": "Applique Work Saree",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711372/Applique-Work-Saree_zhrdid.png",
+    "description": "Showcases beautiful layered patchwork motifs handcrafted individually by experts. Delivers a tactile, high-fashion texturing contrast to your formal wardrobe."
+  },
+  {
+    "id": 9,
+    "name": "Georgette Fabric Work Saree",
+    "price": "499",
+    "category": "saree",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711365/Fabric-Work-Saree_raibow.png",
+    "description": "Carefully selected premium raw textile base detailed with minimalist handcraft accents. A versatile addition built for comfort and understated class."
+  },
+  {
+    "id": 10,
+    "name": "Organza Fabric Work Saree",
+    "price": "549",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711366/Fabric-Work-Saree1_hpvlwg.png",
+    "description": "An upgraded iteration of our textured fabric line, presenting refined thread densities and bespoke finishing touches for a luxurious silhouette."
+  },
+  {
+    "id": 11,
+    "name": "Silk Saree",
+    "price": "889",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711616/Silk-Saree_bagl39.png",
+    "description": "Rich luster textile engineered to catch lightning accents beautifully. Brings a timeless, regal air into high-end evening gala events and family functions."
+  },
+  {
+    "id": 12,
+    "name": "Ready-to-Wear Saree",
+    "price": "1199",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "saree",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711609/Ready-to-Wear-Saree_o1tbek.png",
+    "description": "Pre-pleated layout designed for effortless elegance within seconds. Zero draping hassle, fitting precisely to your exact measurements out of the box."
+  },
+  {
+    "id": 13,
+    "name": "Ruffle Sleeve Dress",
+    "price": "549",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Western",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711611/Ruffle-Sleeve-Dress_d5npo1.png",
+    "description": "Features fluid layered sleeve architecture that creates charming movement profiles. Perfect for chic afternoon cocktail gatherings and warm casual get-togethers."
+  },
+  {
+    "id": 14,
+    "name": "Off-Shoulder Short Dress",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Western",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711596/Off-Shoulder-Short-Dress_vyrv9x.png",
+    "description": "A sophisticated modern collarbone framing design. Offers an ultra-clean, minimalist aesthetic with an impeccably secure structural fit."
+  },
+  {
+    "id": 15,
+    "name": "Puff Sleeve Short Dress",
+    "price": "599",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Western",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711607/Puffy-Sleeves-Short-Dress_fereyy.png",
+    "description": "Dramatic vintage-inspired sleeve volumes paired with a sharp, modern hemline cut. Delivers an ideal visual balance of playful charm and strict structure."
+  },
+  {
+    "id": 16,
+    "name": "Barbie Style Short Dress",
+    "price": "699",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Western",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711375/Barbie-Style-Short-Dress_tsvlyg.png",
+    "description": "Features a distinctly defined cinched waist flowing outward into an iconic structural flare. Tailored from heavy-weight satin for premium volume retention."
+  },
+  {
+    "id": 17,
+    "name": "Bodycon Short Dress",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Western",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711356/Bodycon-Short-Dress_gfxnfh.png",
+    "description": "A sleek, second-skin tailored garment mapped directly to your measurements. Made with highly elastic premium fibers that sculpt your natural lines."
+  },
+  {
+    "id": 18,
+    "name": "Chaniya Choli",
+    "price": "1100",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "LehengaCG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711365/Chaniya-Choli_up19cj.png",
+    "description": "A kaleidoscopic, vibrantly paneled traditional dance layout. Heavy dynamic skirt circumference crafted specifically for rhythmic spinning elegance."
+  },
+  {
+    "id": 19,
+    "name": "Ghagra",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "LehengaCG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711371/Ghagra_yarm11.png",
+    "description": "A classically pleated regional celebration skirt ensemble. Offers rich volume layers paired with an adjustable luxury drawstring layout."
+  },
+  {
+    "id": 20,
+    "name": "Party Wear Lehenga",
+    "price": "1999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "LehengaCG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711598/Party-Wear-Lehenga_xcugxz.png",
+    "description": "Glamorous contemporary embroidery layers set over dynamic micro-pleats. Designed to catch room lighting beautifully and command evening social events."
+  },
+  {
+    "id": 21,
+    "name": "Bridal Lehenga",
+    "price": "4500",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "LehengaCG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711357/Bridal-Lehenga_fzsxle.png",
+    "description": "Our pinnacle couture masterpiece. Features heavy artisanal zardozi embroidery and custom luxury layering details for an unforgettable wedding presence."
+  },
+  {
+    "id": 22,
+    "name": "Mermaid Or Fish-Cut Lehenga",
+    "price": "1799",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "LehengaCG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711590/Mermaid-Or-Fish-Cut-Lehenga_dlepm5.png",
+    "description": "Fitted snugly through the hips and thighs, breaking out beautifully at the knees. Enhances and accentuates natural curvature with modern sculptural precision."
+  },
+  {
+    "id": 23,
+    "name": "Party Wear Fish-Cut Lehenga",
+    "price": "2864",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "LehengaCG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711598/Party-Wear-Fish-Cut-Lehenga_chuvc3.png",
+    "description": "A high-couture variation of the signature fish-cut silhouette. Enriched with premium sequins and lightweight net flares for dynamic comfort on the dancefloor."
+  },
+  {
+    "id": 24,
+    "name": "Banarasi Lehenga",
+    "price": "2200",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "LehengaCG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711375/Banarasi-Lehenga_dtsdjl.png",
+    "description": "Woven with heavy gold and silver brocade brooch details. Merges timeless North Indian heritage textile weight with a clean contemporary flare cut."
+  },
+  {
+    "id": 25,
+    "name": "Indo Gown (Minimalist)",
+    "price": "1499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711588/Indo-Gown_edvynw.png",
+    "description": "An elegant structural fusion gown displaying long, clean geometric lines. Merges Western dress convenience with classic Eastern textile richness."
+  },
+  {
+    "id": 26,
+    "name": "Indo Gown (Embellished)",
+    "price": "1549",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711582/Indo-Gown1_kznfdg.png",
+    "description": "An alternate cut of our signature fusion line featuring delicate hand-beaded detailing across the chest and cascading fabric paneling."
+  },
+  {
+    "id": 27,
+    "name": "Saree Gown",
+    "price": "1599",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711612/Saree-Gown_jkaat4.jpg",
+    "description": "The absolute ultimate fusion piece. Features a zippered sleek gown frame equipped with a perfectly pre-draped attached luxury pallu overlay."
+  },
+  {
+    "id": 28,
+    "name": "Ball Gown",
+    "price": "2499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711374/Ball-Gown_b4ljhn.png",
+    "description": "Features an architectural corseted bodice sweeping down into magnificent tulle skirts. Designed to bring fairy-tale royalty aesthetics to life."
+  },
+  {
+    "id": 29,
+    "name": "Mermaid Style Gown",
+    "price": "1400",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711590/Mermaid-Style-Gown_ulg3eh.png",
+    "description": "A sophisticated full-length evening look contoured to the body, flaring dynamically at the lower hem. Impeccably balances high-fashion and allure."
+  },
+  {
+    "id": 30,
+    "name": "Trail Gown",
+    "price": "1999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711620/Gown-With-Trail_p5q4q3.png",
+    "description": "An elegant full-length presentation featuring a beautifully elongated floor-sweeping fabric extension behind. Guaranteed to dominate grand entrances."
+  },
+  {
+    "id": 31,
+    "name": "Off-Shoulder Pleated Gown",
+    "price": "1699",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711595/Off-Shoulder-With-Pleated-Gown_quyomw.png",
+    "description": "Features fine microscopic draping details running horizontally across a premium boned bodice layout. Timeless, elegant, and strictly high-class."
+  },
+  {
+    "id": 32,
+    "name": "Big Size Ball Trail Gown",
+    "price": "2999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711376/Big-Size-Ball-Gown-With-Trail_aanpat.png",
+    "description": "Maximum volume drama featuring a wide hoop-skirt foundation and an extensive cathedral-length fabric trail. Custom engineered for breathtaking scale."
+  },
+  {
+    "id": 33,
+    "name": "A-Line Gown",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711368/A-Line-Gown_bzgkty.png",
+    "description": "A universally flattering, highly comfortable tailored silhouette that flares gradually from the natural waist. Subtle, versatile, and elegant."
+  },
+  {
+    "id": 34,
+    "name": "Asymmetrical Gown",
+    "price": "1100",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711372/Asymmetrical-Gown_afrbah.png",
+    "description": "Features a striking, unaligned avant-garde neckline and structural high-low hem variance. Perfect for breaking standard style expectations."
+  },
+  {
+    "id": 35,
+    "name": "Balloon Sleeve Gown",
+    "price": "1299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711374/Balloon-Sleeve-Gown_bnb5ef.png",
+    "description": "Showcases fluid, voluminous statement sleeves tapering into a sleek forearm cuff. Creates an exceptional retro-modern profile."
+  },
+  {
+    "id": 36,
+    "name": "Bohemian Gown",
+    "price": "899",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711356/Bohemian-Gown_ysnz10.png",
+    "description": "Relaxed comfort draping paired with organic macramé lace borders. Perfect for breezy outdoor resort galas and premium beach receptions."
+  },
+  {
+    "id": 37,
+    "name": "Cape Gown",
+    "price": "1250",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711357/Cape-Gown_yx5a40.png",
+    "description": "Includes integrated sheer shoulder panels that cascade elegantly past the waistline. Adds a powerful wing-like silhouette to your movement."
+  },
+  {
+    "id": 38,
+    "name": "Empire Gown",
+    "price": "1050",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711364/Empire-Gown_kpcpas.png",
+    "description": "Features an elevated waistline breaking directly beneath the bust, flowing downwards into long lengthening skirts. Creates a graceful statuesque look."
+  },
+  {
+    "id": 39,
+    "name": "Halter Gown",
+    "price": "1199",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711621/Halter-Gown_uoml3a.png",
+    "description": "Sleek, athletic strap architecture framing the shoulders effortlessly. Opens into a beautifully minimalist open-back layout for modern appeal."
+  },
+  {
+    "id": 40,
+    "name": "High Low Gown",
+    "price": "1150",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711580/High-Low-Gown_d0dczx.png",
+    "description": "Features a modern shortened front hemline that transitions smoothly into a full elongated gown back. Perfect for highlighting designer footwear choices."
+  },
+  {
+    "id": 41,
+    "name": "Sheath Gown",
+    "price": "950",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711614/Sheath-Gown_telwpb.png",
+    "description": "A column-style silhouette designed to follow straight vertical lines smoothly. Minimalist profile crafted with crisp crepe textile properties."
+  },
+  {
+    "id": 42,
+    "name": "Slip Gown",
+    "price": "699",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711616/Slip-Gown_t1721z.png",
+    "description": "Breezy, fluid garment constructed from premium lightweight liquid silk. Features delicate satin string straps for effortless night-out styles."
+  },
+  {
+    "id": 43,
+    "name": "Tea Length Gown",
+    "price": "1199",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711699/Tea-Length-Gown_s2njhz.png",
+    "description": "A charming vintage hem alternative ending cleanly mid-calf. Offers an exceptional balance of formal structure and casual mobility."
+  },
+  {
+    "id": 44,
+    "name": "Trumpet Gown",
+    "price": "1450",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Gown",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711702/Trumpet-Gown_b1mjuw.png",
+    "description": "Features a fitted body layout down to the mid-thigh before flaring sharply outward. Creates a bold dynamic angle with an impressive fashion presence."
+  },
+  {
+    "id": 45,
+    "name": "Palazzo with Crop Top",
+    "price": "799",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Palazzo",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711596/Palazzo-With-Crop-Top_lscjh6.png",
+    "description": "A crisp modern coordinates set. Wide-leg flowing trousers paired with a structurally tailored bodice for an easy, fashionable summer aesthetic."
+  },
+  {
+    "id": 46,
+    "name": "Palazzo with Jacket",
+    "price": "1199",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Palazzo",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711598/Palazzo-With-Jacket_qnpbof.png",
+    "description": "Adds an elegant longline jacket overlay to wide trousers. Creates a striking layering effect that moves beautifully with you."
+  },
+  {
+    "id": 47,
+    "name": "Palazzo with Kurti",
+    "price": "850",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Palazzo",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711599/Palazzo-with-Kurti_lnszsu.png",
+    "description": "A beautiful blend of daily wear layout comfort and traditional silhouette tracking. Keeps you effortlessly cool and stylish all day long."
+  },
+  {
+    "id": 48,
+    "name": "Palazzo with Indo-Western Dress",
+    "price": "1299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Palazzo",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711597/Palazzo-with-Indo-Western-Dress_minayw.png",
+    "description": "High-fashion asymmetrical overlay paired with loose, wide-leg trousers. A distinct look tailored for contemporary design enthusiasts."
+  },
+  {
+    "id": 49,
+    "name": "Gharara",
+    "price": "1499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "GhararaG",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711620/Gharara1_owarjo.png",
+    "description": "Traditional trousers ruched tightly at the knees, opening up into voluminous flares. Accented with premium zari laces along the seam intersections."
+  },
+  {
+    "id": 50,
+    "name": "Straight Cut Salwar Kameez",
+    "price": "899",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Salwar",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711610/Salwar-Kameez1_kifbjr.png",
+    "description": "A beautifully balanced, classic ethnic style set. Tailored precisely to your body measurements using breathable, high-durability textiles."
+  },
+  {
+    "id": 51,
+    "name": "Anarkali Salwar Kameez",
+    "price": "1099",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Salwar",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711611/Salwar-Kameez2_jfbovl.png",
+    "description": "Features an alternate neckline structural frame and specialized border embroidery panels for elevated holiday event presentation."
+  },
+  {
+    "id": 52,
+    "name": "Pakistani Style Salwar Kameez",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Salwar",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711611/Salwar-Kameez3_bsrc3s.png",
+    "description": "Showcases a modern mid-slit layout variance over straight relaxed trousers. Offers an artistic layout spin on a traditional favorite."
+  },
+  {
+    "id": 53,
+    "name": "Punjabi Patiala Salwar Kameez",
+    "price": "1049",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Salwar",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711611/Salwar-Kameez4_ndiuwh.png",
+    "description": "Impeccably tailored with intricate motif stitching details across the cuffs and collar. A smart, premium-feel coordinate set."
+  },
+  {
+    "id": 54,
+    "name": "Palazzo Salwar Kameez",
+    "price": "949",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Salwar",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711612/Salwar-Kameez5_b6fulv.png",
+    "description": "Designed with light pastel fabric blends for a refreshing look. Offers absolute comfort without compromising on clean silhouette tracking."
+  },
+  {
+    "id": 55,
+    "name": "Churidar Salwar Kameez",
+    "price": "1149",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Salwar",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711613/Salwar-Kameez6_l3lxqi.png",
+    "description": "Premium luxury edit featuring rich threadwork patterns running the full length of the tunic panel. Perfect for formal family occasions."
+  },
+  {
+    "id": 56,
+    "name": "Flared Peplum Tunic",
+    "price": "799",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711601/Peplum1_tctjz4.png",
+    "description": "Features a fitted structure at the waist that flares out into a charming short overskirt. Accents and defines natural contours beautifully."
+  },
+  {
+    "id": 57,
+    "name": "Gathered Waist Peplum Tunic",
+    "price": "849",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711601/Peplum2_q300yo.png",
+    "description": "An alternate version featuring an updated gathered waist layout that adds subtle volume structure around the hips."
+  },
+  {
+    "id": 58,
+    "name": "Asymmetrical Peplum Tunic",
+    "price": "899",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711602/Peplum3_uji1st.png",
+    "description": "Designed with a slightly lowered asymmetrical hem flare for a contemporary twist. Looks exceptional when paired with high-waisted trousers."
+  },
+  {
+    "id": 59,
+    "name": "V-Neck Peplum Tunic",
+    "price": "949",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711602/Peplum4_pervly.png",
+    "description": "Features a sharply tailored plunging neck cut with refined collar adjustments. Perfect for smart-casual evening ensembles."
+  },
+  {
+    "id": 60,
+    "name": "Floral Embroidered Peplum Tunic",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711602/Peplum5_cve9ka.png",
+    "description": "Couture tier iteration showcasing intricate floral thread details. Offers an elegant texture variation that pairs beautifully with minimalist bottoms."
+  },
+  {
+    "id": 61,
+    "name": "Box Pleated Peplum Tunic",
+    "price": "949",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711603/Peplum6_wsp4ua.png",
+    "description": "Features dynamic box pleats around the flared lower panel for added geometric depth and structured clean lines."
+  },
+  {
+    "id": 62,
+    "name": "Georgette Peplum Tunic",
+    "price": "899",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711603/Peplum7_g3qn2u.png",
+    "description": "Woven with soft premium lightweight yarns for a gentle, effortless fall. A wonderful everyday luxury wardrobe addition."
+  },
+  {
+    "id": 63,
+    "name": "High Waist Peplum Tunic",
+    "price": "849",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711604/Peplum8_c6p8gg.png",
+    "description": "Features an elevated waist separation line designed to gracefully lengthen your profile. Finished with sleek concealed rear zippers."
+  },
+  {
+    "id": 64,
+    "name": "Minimalist Cotton Peplum Tunic",
+    "price": "799",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Peplum",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711604/Peplum9_qivquo.png",
+    "description": "A crisp, sleek minimalist design focusing entirely on immaculate pattern lines and sharp edge-stitching precision."
+  },
+  {
+    "id": 65,
+    "name": "Gota Patti Anarkali Suit",
+    "price": "1299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Anarkali",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711369/Anarkali1_plnp2l.png",
+    "description": "A majestic, umbrella-flared tunic structure radiating classic elegance. Crafted with high-panel densities to create a stunning swirling profile."
+  },
+  {
+    "id": 66,
+    "name": "Heavy Embroidery Festive Anarkali",
+    "price": "1349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Anarkali",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711371/Anarkali2_omxboh.png",
+    "description": "Includes heavy yoke embroidery adjustments paired with a sheer dupatta layer. Perfect for formal wedding reception presence."
+  },
+  {
+    "id": 67,
+    "name": "Georgette Floor Length Anarkali",
+    "price": "1399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Anarkali",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711371/Anarkali3_kgegn5.png",
+    "description": "An alternate color option featuring an updated border profile. Tailored from fine flowing textiles to ensure an elegant drape."
+  },
+  {
+    "id": 68,
+    "name": "Chikankari Premium Anarkali Gown",
+    "price": "1449",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Anarkali",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711371/Anarkali4_b0r1fk.png",
+    "description": "Our highest tier panel gown cut. Adorned with premium thread motifs along the hemline to add sophisticated movement depth."
+  },
+  {
+    "id": 69,
+    "name": "Traditional Silk Pattu Pavadai",
+    "price": "699",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Pavadai",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711600/Pattu-Pavadai1_sa0r81.png",
+    "description": "Traditional South-inspired silk skirt coordinate set. Features bright golden weave borders designed for cultural festivals and family celebrations."
+  },
+  {
+    "id": 70,
+    "name": "Brocade Designer Pattu Pavadai",
+    "price": "749",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Pavadai",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711601/Pattu-Pavadai2_gamqit.png",
+    "description": "An upgraded luxury silk edit with rich contrast panels and a beautifully fitted, hand-finished bodice element."
+  },
+  {
+    "id": 71,
+    "name": "Sharara Trousers",
+    "price": "2100",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Sharara",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711614/Sharara1_s1rpmv.png",
+    "description": "Wide-leg trousers that flare out dramatically from the knee. Finished with detailed embellishments for an elegant, eye-catching party profile."
+  },
+  {
+    "id": 72,
+    "name": "Flared-Sharara Elite",
+    "price": "2100",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Sharara",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711367/Flared-Sharara_e9lmpt.png",
+    "description": "An extra-wide pattern layout designed for a skirt-like illusion during movement. Offers a fluid, graceful silhouette for high-end celebrations."
+  },
+  {
+    "id": 73,
+    "name": "Cotton Short Tunic Kurti",
+    "price": "299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Kurti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711615/Short-Kurti_j7vvok.png",
+    "description": "A chic, comfortable short tunic cut. Perfect for pairing with denim or palazzos for an effortless, everyday look."
+  },
+  {
+    "id": 74,
+    "name": "Button Styled Short Tunic Kurti",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Kurti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711615/Short-Kurti1_aqbkeh.png",
+    "description": "Features decorative button detailing and refined cuff finishes for an elevated casual style statement."
+  },
+  {
+    "id": 75,
+    "name": "Linen Blend Short Tunic Kurti",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Kurti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711615/Short-Kurti2_qcqu92.png",
+    "description": "An elevated linen-blend tunic featuring delicate self-weave patterns. Delivers exceptional cooling and a sophisticated minimalist look."
+  },
+  {
+    "id": 76,
+    "name": "Straight Cut Longline Kurti",
+    "price": "899",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Kurti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711587/Long-Kurti_tuto1j.png",
+    "description": "An elegant straight-cut longline tunic featuring high side slits. Offers a sharp, lengthening silhouette with excellent mobility."
+  },
+  {
+    "id": 77,
+    "name": "Embroidered Neck Longline Kurti",
+    "price": "949",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Kurti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711589/Long-Kurti1_nrlsjq.png",
+    "description": "Enhanced with subtle neck embroidery and premium fabric panel paths, balancing traditional charm with contemporary clean lines."
+  },
+  {
+    "id": 78,
+    "name": "Wedding Wear Jumpsuit",
+    "price": "1199",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Jumpsuit",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711698/Wedding-Wear-Jupsuit_ooi7as.png",
+    "description": "A bold, avant-garde festive look. Features a sharply tailored bodice and sweeping, wide legs, beautifully accented with celebratory zardozi details."
+  },
+  {
+    "id": 79,
+    "name": "Western Style Jumpsuit",
+    "price": "599",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Jumpsuit",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711699/Western-Style-Jumpsuit_yhioam.png",
+    "description": "A sleek, minimalist utility silhouette featuring a sharply defined, cinched waistline. Perfect for an effortless transition from day to evening events."
+  },
+  {
+    "id": 80,
+    "name": "Beach Wear Jumpsuit",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Jumpsuit",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711375/Beach-Wear-Jumpsuit_eksvby.png",
+    "description": "Crafted from a highly breathable, ultra-lightweight fabric blend. Designed with a relaxed, flowing fit ideal for warm-weather resorts and breezy coastlines."
+  },
+  {
+    "id": 81,
+    "name": "Round Pot Blouse Front Neck",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711353/Blouse-Front-Neck-Design1_m0bn9d.png",
+    "description": "A beautifully contoured classic front neckline cutout. Meticulously structured to provide a flattering, secure fit for traditional saris and fusion wear alike."
+  },
+  {
+    "id": 82,
+    "name": "Sweetheart Blouse Front Neck",
+    "price": "409",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711353/Blouse-Front-Neck-Design2_a87mjy.png",
+    "description": "An elegant variance featuring curved edge-stitching aesthetics. Perfect for bringing a subtle modern pattern flair to your custom silk saree combinations."
+  },
+  {
+    "id": 83,
+    "name": "Deep V Blouse Front Neck",
+    "price": "419",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711354/Blouse-Front-Neck-Design3_jdoasd.png",
+    "description": "Features a modern sweetheart-inspired dip with reinforced internal lining panels to ensure shape retention and exceptional luxury comfort."
+  },
+  {
+    "id": 84,
+    "name": "Square Cut Blouse Front Neck",
+    "price": "429",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711354/Blouse-Front-Neck-Design4_re5onl.png",
+    "description": "A crisp geometric framing design tailored precisely to sit flat against the collarbone, ideal for heavy embroidery or statement necklaces."
+  },
+  {
+    "id": 85,
+    "name": "U Shape Blouse Front Neck",
+    "price": "439",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711354/Blouse-Front-Neck-Design5_vcbk5u.png",
+    "description": "Features delicate piping along a scoop collar perimeter, balancing traditional heritage weight with a cleanly stylized modern finish."
+  },
+  {
+    "id": 86,
+    "name": "Boat Neck Blouse Front Design",
+    "price": "449",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711355/Blouse-Front-Neck-Design6_qa1mos.png",
+    "description": "An elite-cut plunging front motif tailored with hidden support seams. Gives your festive coordinate sets a sharp, runway-ready profile."
+  },
+  {
+    "id": 87,
+    "name": "Asymmetrical Blouse Front Neck",
+    "price": "459",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711356/Blouse-Front-Neck-Design7_brwfgq.png",
+    "description": " Breathtaking asymmetrical collar tailoring designed for fusion aesthetics. Pairs flawlessly with sheer net or cape saree overlays."
+  },
+  {
+    "id": 88,
+    "name": "Mandarin Collar Blouse Front Design",
+    "price": "469",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711355/Blouse-Front-Neck-Design9_afp9nd.png",
+    "description": "A high-neck mandarin-inspired front structural frame. Merges sophisticated formal lines with a comfortable, non-restrictive custom fit."
+  },
+  {
+    "id": 89,
+    "name": "Keyhole Cut Blouse Front Neck",
+    "price": "479",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711355/Blouse-Front-Neck-Design8_mrvfkk.png",
+    "description": "Premium hand-piped keyhole front detail. Adds a delicate, artistic window effect that elevates the luxury appeal of cocktail blouses."
+  },
+  {
+    "id": 90,
+    "name": "Classic Deep Round Blouse Back Neck",
+    "price": "450",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711376/Blouse-Back-Neck-Design0_y7ih93.png",
+    "description": "Classic deep round back layout engineered with precise canvas weights to prevent shoulder slippage while holding an immaculate frame."
+  },
+  {
+    "id": 91,
+    "name": "Square Patchwork Blouse Back Neck",
+    "price": "460",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711376/Blouse-Back-Neck-Design1_ipyf1z.png",
+    "description": "A sophisticated square back configuration featuring clean, sharp corner stitching. Built for secure dori placement and tassel attachments."
+  },
+  {
+    "id": 92,
+    "name": "U-Cut Dori Blouse Back Neck",
+    "price": "470",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711348/Blouse-Back-Neck-Design2_rojjvu.png",
+    "description": "U-shaped plunging cutout lined with premium inner facings, giving a seamless look that complements wedding lehengas beautifully."
+  },
+  {
+    "id": 93,
+    "name": "Teardrop Button Blouse Back Neck",
+    "price": "480",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711348/Blouse-Back-Neck-Design3_douthj.png",
+    "description": "An elegant teardrop cutout back design with button closures. Balances modern architectural styling with effortless everyday wearability."
+  },
+  {
+    "id": 94,
+    "name": "Diamond Cutout Blouse Back Neck",
+    "price": "490",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711348/Blouse-Back-Neck-Design4_puahmy.png",
+    "description": "Features a refined diamond cut back opening. The sharp geometric lines provide an eye-catching focal point for your formal wardrobe."
+  },
+  {
+    "id": 95,
+    "name": "High Boat Neck Blouse Back Design",
+    "price": "500",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711348/Blouse-Back-Neck-Design5_lmepzh.png",
+    "description": "A beautiful boat-neck back variation offering modest silhouette framing. An ideal choice for elegant corporate galas or festive afternoon events."
+  },
+  {
+    "id": 96,
+    "name": "Lace-Up Keyhole Blouse Back Neck",
+    "price": "510",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711349/Blouse-Back-Neck-Design6_sqfe1u.png",
+    "description": "Features a dynamic keyhole lace-up rear closure system, providing a flexible and fully adjustable fit while maintaining clean contours."
+  },
+  {
+    "id": 97,
+    "name": "Vintage Pot Neck Blouse Back Design",
+    "price": "520",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711349/Blouse-Back-Neck-Design7_z21d4s.png",
+    "description": "An elegant, curved pot-neck design inspired by vintage silhouettes. Offers a timeless look that pairs beautifully with traditional silk weaves."
+  },
+  {
+    "id": 98,
+    "name": "Multi Strap Strappy Blouse Back Neck",
+    "price": "530",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711349/Blouse-Back-Neck-Design8_fkbdtx.png",
+    "description": "An intricate multi-strap back layout designed for modern wardrobes, combining structural mesh accents with sharp contemporary lines."
+  },
+  {
+    "id": 99,
+    "name": "Inverted V-Cut Blouse Back Neck",
+    "price": "540",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711350/Blouse-Back-Neck-Design9_nygcqe.png",
+    "description": "Features an inverted V-cut hem profile that subtly elongates your torso while ensuring a sleek, wrinkle-free fit against the lower back."
+  },
+  {
+    "id": 100,
+    "name": "Temple Cutout Bridal Blouse Back Neck",
+    "price": "550",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711350/Blouse-Back-Neck-Design10_j1dop5.png",
+    "description": "A striking cutout design inspired by temple architecture, adding historical charm to your custom-tailored wedding blouses."
+  },
+  {
+    "id": 101,
+    "name": "Sheer Net Illusion Blouse Back Neck",
+    "price": "560",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711350/Blouse-Back-Neck-Design11_j5coqz.png",
+    "description": "A sheer illusion mesh back panel finished with refined edge-piping. Perfect for giving your festive ensembles a weightless, floating feel."
+  },
+  {
+    "id": 102,
+    "name": "Scallop Border Scoop Blouse Back Neck",
+    "price": "570",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711350/Blouse-Back-Neck-Design12_i07rtw.png",
+    "description": "Features a delicate scalloped edge treatment along a deep scoop neckline, bringing a soft, playful aesthetic to modern chic blouses."
+  },
+  {
+    "id": 103,
+    "name": "Swooping Asymmetric Blouse Back Neck",
+    "price": "580",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711351/Blouse-Back-Neck-Design13_cxilvh.png",
+    "description": "An asymmetrical swooping back layout designed for fashion forward statements, featuring secure side zipper integrations."
+  },
+  {
+    "id": 104,
+    "name": "Cross-Over Tie Blouse Back Neck",
+    "price": "590",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711351/Blouse-Back-Neck-Design14_egzfzs.png",
+    "description": "A cross-over wrap design that closes elegantly with side ties, offering a flexible waistline fit with zero restrictive pressure."
+  },
+  {
+    "id": 105,
+    "name": "Sequin Mesh Evening Blouse Back Neck",
+    "price": "600",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711351/Blouse-Back-Neck-Design15_gaiyth.png",
+    "description": "An elite sheer back design detailed with hand-set sequin lines, catching evening event lights beautifully from any angle."
+  },
+  {
+    "id": 106,
+    "name": "Double Keyhole Cutout Blouse Back Neck",
+    "price": "610",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711351/Blouse-Back-Neck-Design16_gnpwbd.png",
+    "description": "A modern double-keyhole cutout design offering a balanced open-back look while maintaining maximum upper shoulder structural support."
+  },
+  {
+    "id": 107,
+    "name": "Hexagonal Geometric Blouse Back Neck",
+    "price": "620",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design17_utdtx1.png",
+    "description": "Features a modern geometric hexagonal back frame, delivering a clean avant-garde look for contemporary wardrobe designs."
+  },
+  {
+    "id": 108,
+    "name": "High Collar Oval Window Blouse Back Neck",
+    "price": "630",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711348/Blouse-Back-Neck-Design18_dkvcrp.png",
+    "description": "A high back collar layout featuring an elegant center oval cutout, designed to frame high-end handloom saree patterns beautifully."
+  },
+  {
+    "id": 109,
+    "name": "Deep V-Shape Contrast Blouse Back Neck",
+    "price": "640",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711348/Blouse-Back-Neck-Design19_kkyhzf.png",
+    "description": "An deep V-shaped tailored back cut accented with contrast piping lines, designed to follow your posture lines with absolute precision."
+  },
+  {
+    "id": 110,
+    "name": "Contoured Dual-Hook Blouse Back Neck",
+    "price": "650",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711349/Blouse-Back-Neck-Design20_spehdi.png",
+    "description": "A beautifully contoured oval back configuration featuring dual hook secure fastness, designed to distribute fabric tension evenly."
+  },
+  {
+    "id": 111,
+    "name": "Embroidered Net Canvas Blouse Back Neck",
+    "price": "660",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711349/Blouse-Back-Neck-Design21_q8h5j7.png",
+    "description": "An integrated sheer canvas back element finished with intricate custom embroidery motifs, bringing a luxurious touch to any party look."
+  },
+  {
+    "id": 112,
+    "name": "Corset Lace-Up Blouse Back Neck",
+    "price": "670",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711349/Blouse-Back-Neck-Design22_hocfze.png",
+    "description": "A modern corset-inspired lace back design. Allows you to micro-adjust the waistline tightness while adding an iconic style accent."
+  },
+  {
+    "id": 113,
+    "name": "Tear Cutout Buckle Blouse Back Neck",
+    "price": "680",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711350/Blouse-Back-Neck-Design23_b9gdba.png",
+    "description": "Features a clean tear cutout with lower-band buckle integrations, delivering an ultra-modern aesthetic for evening cocktail parties."
+  },
+  {
+    "id": 114,
+    "name": "Low Ultra-Scoop Blouse Back Neck",
+    "price": "690",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711350/Blouse-Back-Neck-Design24_q15hlm.png",
+    "description": "A dramatic scoop back cut with an ultra-low contour line, designed with balanced side bones to maintain a flawless, wrinkle-free layout."
+  },
+  {
+    "id": 115,
+    "name": "Pearl Bordered Diamond Blouse Back Neck",
+    "price": "700",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711351/Blouse-Back-Neck-Design25_meknhl.png",
+    "description": "A classic diamond cut layout adorned with mini pearl borders, bringing an exquisite, hand-finished luxury touch to your ensembles."
+  },
+  {
+    "id": 116,
+    "name": "Overlapping Petal Blouse Back Neck",
+    "price": "710",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711351/Blouse-Back-Neck-Design26_nbnanr.png",
+    "description": "Features an overlapping petal back configuration, offering unique movement and an exceptional artistic profile for custom attire."
+  },
+  {
+    "id": 117,
+    "name": "Curved Square Cutout Blouse Back Neck",
+    "price": "720",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design27_tscmtd.png",
+    "description": "A modified square back cutout with curved baseline transitions, built for comfortable shoulder mobility and elegant drape pairing."
+  },
+  {
+    "id": 118,
+    "name": "High Collar Slit Slit Blouse Back Neck",
+    "price": "730",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design28_qxvs3x.png",
+    "description": "A high-neck collar design featuring a subtle teardrop back slit closure, combining modern professional modesty with festive elegance."
+  },
+  {
+    "id": 119,
+    "name": "Sharp Triangle Button Blouse Back Neck",
+    "price": "740",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design29_x5euts.png",
+    "description": "Features a sharp triangle back opening with an integrated top-button closure, adding an eye-catching geometric style accent."
+  },
+  {
+    "id": 120,
+    "name": "Deep Scoop Double-Tie Blouse Back Neck",
+    "price": "750",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design30_hq8yba.png",
+    "description": "A deep scoop back configuration featuring delicate double ties, engineered to provide a secure fit while highlighting premium embroidery work."
+  },
+  {
+    "id": 121,
+    "name": "Piped Keyhole Fastening Blouse Back Neck",
+    "price": "760",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design31_nfmwka.png",
+    "description": "An elegant keyhole cut back design accented with fine hand-stitched piping, delivering a beautiful focal point for your formal wardrobe."
+  },
+  {
+    "id": 122,
+    "name": "Horizontal Bar V-Back Blouse Design",
+    "price": "770",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design32_gwajfv.png",
+    "description": "A deep V-back cut featuring a wide horizontal structural bar, providing a clean contemporary look with superb shape retention."
+  },
+  {
+    "id": 123,
+    "name": "Lace-Trimmed Oval Blouse Back Neck",
+    "price": "780",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711352/Blouse-Back-Neck-Design33_ifclzv.png",
+    "description": "Features an elegant oval back cutout bordered with custom lace details, balancing traditional heritage weight with a cleanly styled modern finish."
+  },
+  {
+    "id": 124,
+    "name": "U-Back Dori Tassel Bridal Blouse Design",
+    "price": "790",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Blouse",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711353/Blouse-Back-Neck-Design34_mukbf9.png",
+    "description": "A beautiful U-back configuration featuring refined dori tassel placements, giving a timeless and regal touch to grand wedding lehengas."
+  },
+  {
+    "id": 125,
+    "name": "Short Kurti Dhoti Set",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Dhoti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711363/Dhoti-With-Kurti-Set_sml1wy.png",
+    "description": "A chic modern coordinates ensemble combining draped dhoti trousers with a structured tunic. Perfect for an effortless festive look."
+  },
+  {
+    "id": 126,
+    "name": "Anarkali Kurti Dhoti Set",
+    "price": "1049",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Dhoti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711363/Dhoti-With-Kurti-Set1_yvjsl1.png",
+    "description": "An upgraded iteration featuring an asymmetrical kurti hemline and intricate embroidery work along the leg pleats for added flair."
+  },
+  {
+    "id": 127,
+    "name": "Cowl Draped Dhoti Dress",
+    "price": "1099",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Dhoti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711361/Dhoti-Style-Dress_y0bual.png",
+    "description": "A gorgeous fusion piece featuring an integrated cowl-draped lower skirt. Combines traditional drape convenience with sleek contemporary patterns."
+  },
+  {
+    "id": 128,
+    "name": "Jacketed Dhoti Style Dress",
+    "price": "1149",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Dhoti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711361/Dhoti-Style-Dress1_kz2km2.png",
+    "description": "An alternate version featuring an updated waist cinching design and delicate pleat patterns that flow beautifully with your movement."
+  },
+  {
+    "id": 129,
+    "name": "Asymmetric Cape Dhoti Dress",
+    "price": "1199",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Dhoti",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711362/Dhoti-Style-Dress2_qudme0.png",
+    "description": "An elite fusion gown variant equipped with dramatic structural draping panels, designed to command attention at high-end evening galas."
+  },
+  {
+    "id": 130,
+    "name": "Phanek",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Phanek",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711606/Phanek1_s0rlnc.png",
+    "description": "A beautiful traditional wrapped skirt featuring classic handwoven horizontal border stripes. Custom-tailored to provide a comfortable, historic fit."
+  },
+  {
+    "id": 131,
+    "name": "A-Line Frock",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711367/A-Line-Frock_emrnpd.png",
+    "description": "A charming, universally flattering silhouette that flares gradually from the natural shoulders, offering superb mobility and timeless casual class."
+  },
+  {
+    "id": 132,
+    "name": "Fit & Flare Frock",
+    "price": "549",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711365/Fit-_-Flare-Frock_lf2e6m.png",
+    "description": "Features a distinctly defined cinched bodice flowing outward into a voluminous flared skirt. Made with selected fabrics for maximum volume retention."
+  },
+  {
+    "id": 133,
+    "name": "Empire Waist Frock",
+    "price": "599",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711365/Empire-Waist-Frock_nzur5e.png",
+    "description": "An elevated waistline breaking directly beneath the bust, cascading downwards into a fluid silhouette. Creates an elegant, graceful statuesque look."
+  },
+  {
+    "id": 134,
+    "name": "Sheath Frock",
+    "price": "450",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711613/Sheath-Frock_eg93sp.png",
+    "description": "A column-style short dress designed to follow straight vertical lines smoothly. Minimalist profile tailored with crisp, high-durability crepe textile."
+  },
+  {
+    "id": 135,
+    "name": "Wrap Frock",
+    "price": "550",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711698/Wrap-Frock_h6vaz5.png",
+    "description": "A sophisticated cross-front design that ties securely at the waist, offering an adjustable contour fit that flatters your profile effortlessly."
+  },
+  {
+    "id": 136,
+    "name": "Bodycon Frock",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711355/Bodycon-Frock_s0hrmr.png",
+    "description": "A sleek, body-contouring short frock mapped directly to your lines. Crafted with elastic premium fibers that sculpt your natural silhouette beautifully."
+  },
+  {
+    "id": 137,
+    "name": "Maxi Frock",
+    "price": "799",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711589/Maxi-Frock_akwwko.png",
+    "description": "A breezy full-length casual dress presenting long, clean flowing lines. Offers absolute comfort without compromising on contemporary style tracking."
+  },
+  {
+    "id": 138,
+    "name": "Shirt Frock",
+    "price": "599",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711614/Shirt-Frock_dnwff3.png",
+    "description": "Features a smart button-down collar layout with an adjustable fabric tie waist, effortlessly balancing clean professional lines and weekend comfort."
+  },
+  {
+    "id": 139,
+    "name": "Tiered Frock",
+    "price": "699",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711701/Tiered-Frock_jqfrkc.png",
+    "description": "Designed with cascading gathered fabric panels that add playful movement depth. Perfect for chic afternoon cocktail gatherings."
+  },
+  {
+    "id": 140,
+    "name": "Peplum Frock",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711605/Peplum-Frock_mgyzfe.png",
+    "description": "Features a fitted waist structure that breaks into a charming short ruffle flare over a tailored skirt base, defining natural contours elegantly."
+  },
+  {
+    "id": 141,
+    "name": "Halter Neck Frock",
+    "price": "549",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711579/Halter-Neck-Frock_rfq3tw.png",
+    "description": "Sleek strap architecture framing the shoulders effortlessly, opening into a beautiful open-back layout ideal for warm-weather resorts."
+  },
+  {
+    "id": 142,
+    "name": "Off-Shoulder Frock",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711593/Off-Shoulder-Frock_domwag.png",
+    "description": "A sophisticated collarbone framing layout. Offers an ultra-clean, minimalist aesthetic with an impeccably secure and structured elastic fit."
+  },
+  {
+    "id": 143,
+    "name": "Square Neck Frock",
+    "price": "450",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711618/Square-Neck-Frock_x8pkyq.png",
+    "description": "A structured square neck configuration that frames the chest beautifully. Gives a clean retro-modern profile to your everyday look."
+  },
+  {
+    "id": 144,
+    "name": "Sweetheart Neck Frock",
+    "price": "599",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711698/Sweetheart-Neck-Frock_c1wvws.png",
+    "description": "Features a romantic scalloped heart neckline cutout, providing an exceptionally elegant touch to custom weekend brunch dresses."
+  },
+  {
+    "id": 145,
+    "name": "Ball Gown Frock",
+    "price": "899",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711373/Ball-Gown-Frock_i6l7er.png",
+    "description": "A dramatic princess-cut short dress featuring heavily layered tulle underskirts. Designed to bring fairy-tale royalty aesthetics to celebration events."
+  },
+  {
+    "id": 146,
+    "name": "Asymmetrical Frock",
+    "price": "550",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711372/Asymmetrical-Frock_rqp81c.png",
+    "description": "Features a striking high-low unaligned hemline variance, delivering an eye-catching avant-garde edge for contemporary design enthusiasts."
+  },
+  {
+    "id": 147,
+    "name": "Spaghetti Strap Frock",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Frock",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711618/Spaghetti-Strap-Frock_mynk1c.png",
+    "description": "Breezy and fluid garment constructed with delicate silk string straps, offering a weightless and effortless resort fashion look."
+  },
+  {
+    "id": 148,
+    "name": "Pleated Skirt",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711606/Pleated_iugti8.png",
+    "description": "Features crisp, heat-set vertical folds that create structured depth and charming movement profiles. An essential addition for a sharp wardrobe."
+  },
+  {
+    "id": 149,
+    "name": "Denim Skirt",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711360/Denim_z8g24x.png",
+    "description": "Crafted from heavy-weight durable denim with contrast top-stitching, providing a classic casual profile that breaks in beautifully over time."
+  },
+  {
+    "id": 150,
+    "name": "A-line Skirt",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711367/A-line_fvmcql.png",
+    "description": "A clean silhouette that flares gradually from the natural waist, offering an understated minimalist aesthetic that pairs easily with snug tops."
+  },
+  {
+    "id": 151,
+    "name": "Mini Skirt",
+    "price": "299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711592/Mini_qad60y.png",
+    "description": "A chic shortened style designed for sleek modern looks, tailored with a close fit and a secure concealed rear zipper integration."
+  },
+  {
+    "id": 152,
+    "name": "Tennis Skirt",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711700/Tennis_x5ap5f.png",
+    "description": "Features athletic box pleats and an integrated high-rise comfort waistband, balancing retro preppy appeal with absolute daily mobility."
+  },
+  {
+    "id": 153,
+    "name": "Wrap Skirt",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711698/Wrap_tuwzve.png",
+    "description": "An overlapping fabric panel design with adjustable side tie fastenings, providing a flexible waistline fit with zero restrictive pressure."
+  },
+  {
+    "id": 154,
+    "name": "Ruffled Skirt",
+    "price": "449",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711608/Ruffled_qxyws6.png",
+    "description": "Adorned with fluid cascading ruffle trims along the borders, creating beautiful layers that catch the breeze effortlessly."
+  },
+  {
+    "id": 155,
+    "name": "Cargo Skirt",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711359/Cargo_ixvdqb.png",
+    "description": "A modern utility look featuring prominent flap pockets and a structured weave layout, merging streetwear trends with a comfortable fit."
+  },
+  {
+    "id": 156,
+    "name": "Skater Skirt",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711615/Skater_icpkut.png",
+    "description": "Features a high-waisted circular cut that flows into an effortless wide flare, perfect for creating fun, playful silhouettes."
+  },
+  {
+    "id": 157,
+    "name": "Tiered Skirt",
+    "price": "450",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711700/Tiered_vqpkiv.png",
+    "description": "Designed with multiple horizontal gathered textile layers, bringing a wonderful bohemian luxury feel to your casual summer outings."
+  },
+  {
+    "id": 158,
+    "name": "Flounce Skirt",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711367/Flounce_r9akob.png",
+    "description": "A sleek, fitted pencil silhouette through the waist and thighs, breaking into a playful wide ruffle flare right above the knee."
+  },
+  {
+    "id": 159,
+    "name": "Front Wrap Tulip Skirt",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711702/Tulip_snvza8.png",
+    "description": "Features a beautiful overlapping front panel layout that mimics petal lines, offering a highly sophisticated look for office styling."
+  },
+  {
+    "id": 160,
+    "name": "High Waisted Tulip Skirt",
+    "price": "429",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711703/Tulip1_e5dfid.png",
+    "description": "An alternate cut of our tulip design featuring an elevated waist wrap layout and deep rich pleats for added texturing depth."
+  },
+  {
+    "id": 161,
+    "name": "Ruched Skirt",
+    "price": "449",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711608/Ruched_de8ybu.png",
+    "description": "Features tight drawstring gather details running along the seams, allowing you to micro-adjust the length and gather textures dynamically."
+  },
+  {
+    "id": 162,
+    "name": "Asymmetrical Skirt",
+    "price": "429",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711372/Asymmetrical_xojdej.png",
+    "description": "A striking unaligned hem design that defies standard styling lines, perfect for pairing with minimalist graphic tees or tight crop tops."
+  },
+  {
+    "id": 163,
+    "name": "Pleather Skirt",
+    "price": "599",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Skirt",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711606/Pleather_pgi0va.png",
+    "description": "Sleek faux leather tailored to a sharp finish, offering a bold high-fashion texture contrast that commands attention on nights out."
+  },
+  {
+    "id": 164,
+    "name": "Knit Sweater",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711583/Knit-Sweater_p5k3o1.png",
+    "description": "Soft yarn-blend knit structure offering cozy warmth and a relaxed silhouette. Finished with refined ribbed cuffs for premium comfort."
+  },
+  {
+    "id": 165,
+    "name": "Camisole Top",
+    "price": "249",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711357/Camisole-Top_pmzzly.png",
+    "description": "A weightless satin underlayer featuring ultra-thin straps, providing a smooth second-skin layout perfect for luxury layering."
+  },
+  {
+    "id": 166,
+    "name": "Square Neck Top",
+    "price": "299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711698/Square-Neck-Top_dlumcp.png",
+    "description": "A clean geometric framing layout built with premium rib fabric. Fits securely to highlight natural neck contours with modern poise."
+  },
+  {
+    "id": 167,
+    "name": "Bell Sleeve Top",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711375/Bell-Sleeve-Top_zlzr9o.png",
+    "description": "Features dramatic retro-modern sleeve volumes tapering into loose cuffs, bringing effortless motion elegance into casual weekend wear."
+  },
+  {
+    "id": 168,
+    "name": "Smocked Top",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711617/Smocked-Top_lel0w4.png",
+    "description": "Features a fully elastic gathered bodice that fits your exact measurements snuggly while maintaining absolute breathability."
+  },
+  {
+    "id": 169,
+    "name": "Tie Front Top",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711700/Tennis_x5ap5f.png",
+    "description": "A breezy vacation essential with an adjustable front knot closure, adding a charming playful accent to high-waisted shorts."
+  },
+  {
+    "id": 170,
+    "name": "Asymmetrical Top",
+    "price": "329",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711372/Asymmetrical-Top_enfs7g.png",
+    "description": "Features a single-shoulder strap cut or uneven baseline, offering a distinct contemporary style statement for avant-garde fans."
+  },
+  {
+    "id": 171,
+    "name": "Cold Shoulder Top",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711359/Cold-Shoulder-Top_inwwyl.png",
+    "description": "Sleek arm cutouts detailed with supportive straps, balancing contemporary edge-styling with modest silhouette coverage."
+  },
+  {
+    "id": 172,
+    "name": "Button Down Blouse",
+    "price": "449",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711357/Button-Down-Blouse_zxi3e9.png",
+    "description": "Crisp linen-blend fabrication featuring tailored collars and concealed button placements, perfect for sharp professional profiles."
+  },
+  {
+    "id": 173,
+    "name": "Tunic Top",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711697/Tunic-Top_ieifi6.png",
+    "description": "An elongated straight-cut casual top with deep side slits, delivering high breathability and clean vertical line tracking."
+  },
+  {
+    "id": 174,
+    "name": "Cape Top",
+    "price": "450",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711358/Cape-Top_pnnphi.png",
+    "description": "Includes integrated fluid shoulder panels that drape elegantly over the arms, bringing a powerful wing-like silhouette to your wardrobe."
+  },
+  {
+    "id": 175,
+    "name": "Layered Top",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711585/Layered-Top_s3xzcs.png",
+    "description": "Features multi-tiered flowing fabric tiers that create texturing depth, eliminating transparency while keeping things light and airy."
+  },
+  {
+    "id": 176,
+    "name": "Mesh Top",
+    "price": "299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711592/Mesh-Top_scxg52.png",
+    "description": "A delicate sheer mesh layering piece designed for high-contrast combinations, providing a weightless, floating feel for nights out."
+  },
+  {
+    "id": 177,
+    "name": "Embroidered Top",
+    "price": "499",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711592/Mesh-Top_scxg52.png",
+    "description": "Bespoke threadwork motifs detailed across a soft cotton base, striking an ideal balance of artisan handcraft and modern daily utility."
+  },
+  {
+    "id": 178,
+    "name": "Satin Blouse",
+    "price": "449",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711613/Satin-Blouse_rixv9w.png",
+    "description": "Rich liquid satin finish that catches ambient room accents beautifully. Brings a timeless, regal air into high-end cocktail events."
+  },
+  {
+    "id": 179,
+    "name": "Off-Shoulder Blouse",
+    "price": "349",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711594/Off-Shoulder-Blouse_vw6vwa.png",
+    "description": "A flattering collarbone-baring elastic neckline layout, engineered to sit flat and securely while providing sleek modern appeal."
+  },
+  {
+    "id": 180,
+    "name": "Peasant Top",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711599/Peasant-Top_j8jclc.jpg",
+    "description": "Features gathered necklines and billowing puffed sleeves, combining relaxed boho styling with a comfortable lightweight drape."
+  },
+  {
+    "id": 181,
+    "name": "Knot Front Top",
+    "price": "299",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711583/Knot-Front-Top_hnihzd.png",
+    "description": "Features an integrated center tie layout that cinches the waist naturally, perfect for paired styling with high-rise denim skirts."
+  },
+  {
+    "id": 182,
+    "name": "Chiffon Blouse",
+    "price": "399",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Top",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711359/Chiffon-Blouse_cxmoca.png",
+    "description": "Delicate sheer chiffon fabric layered with an ultra-clean neckline finish. Offers a loose, floating silhouette with superb daily comfort."
+  },
+  {
+    "id": 183,
+    "name": "Ethnic Floral Indo Western Dress",
+    "price": "999",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Indo",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711581/indo1_pgrzby.png",
+    "description": "The ultimate fusion masterpiece, combining sleek Western tailoring cuts with rich traditional textile prints. An effortless holiday classic."
+  },
+  {
+    "id": 184,
+    "name": "Geometric Fusion Indo Western Dress",
+    "price": "1049",
+    "color": ["yellow", "pink", "green", "red", "blue"],
+    "category": "Indo",
+    "image": "https://res.cloudinary.com/dnami0fsz/image/upload/q_auto:low,f_avif,w_500/v1781711581/indo2_r1mrqa.png",
+    "description": "An alternate cut featuring an asymmetrical hem configuration and hand-tailored contrast border patterns, built for a striking festive presence."
+  }
+]
