@@ -347,7 +347,7 @@
 
     <!-- SCREEN 1: Initial Login Modal -->
     <div id="view-login" class="view active">
-        <button class="close-btn"><a href="shop.html" style="text-decoration: none;">&times;</a></button>
+        <button class="close-btn"><a href="Shop.html" style="text-decoration: none;">&times;</a></button>
         <div class="modal-title">Log in to your account</div>
         <div class="modal-subtitle">Enter your email address to log in to your account</div>
         
@@ -518,12 +518,12 @@
             switchView(viewLogin);
         });
 
-        // Click Continue -> Save session to localStorage and redirect to shop.html
+        // Click Continue -> Save session to localStorage and redirect to Shop.html
         document.getElementById('btn-continue').addEventListener('click', () => {
             if (activeUser) {
                 localStorage.setItem('currentUser', JSON.stringify(activeUser));
                 alert('Successfully logged in as ' + activeUser.email + '!');
-                window.location.href = 'shop.html'; // Redirects back to your shop page
+                window.location.href = 'Shop.html'; // Redirects back to your shop page
             }
         });
     </script>

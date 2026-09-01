@@ -38,7 +38,7 @@ const getStockStatus = () => {
   return JSON.parse(localStorage.getItem("admin_stock_status") || "{}");
 };
 
-const rendershopProducts = (products) => {
+const renderShopProducts = (products) => {
   const stockStatus = getStockStatus();
   const shopContainer = document.querySelector(".shop-container"); // Adjust selector as needed
   if (!shopContainer) return;
